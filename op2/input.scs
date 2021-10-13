@@ -6,10 +6,10 @@ global 0
 include "ptm.scs"
 
 parameters vs=500m vi=0 vsup=5.0 vcm=0 vo=0 vid=0 vicm=0 \
-           a0=1 cl=5p fin=1k i0=3u rl=100M \
-           Lcm1=500n Lcm2=500n Lcm3=500n Ld=500n \
-           Wcm1=2u   Wcm2=2u   Wcm3=2u   Wd=2u \
-           Mcm11=1   Mcm21=1   Mcm31=2   Md=2 \
+           a0=1 cl=5p fin=1k i0=3u rl=100M               \
+           Lcm1=500n Lcm2=500n Lcm3=500n Ld=500n         \
+           Wcm1=2.0u Wcm2=2.0u Wcm3=2.0u Wd=2.0u         \
+           Mcm11=1   Mcm21=1   Mcm31=2   Md=2            \
            Mcm12=2   Mcm22=4   Mcm32=2 
 
 subckt ideal_balun d c p n
