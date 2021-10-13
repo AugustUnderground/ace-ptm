@@ -71,14 +71,13 @@ subckt op B INP INN O VDD VSS
     MPCM211 (X X VDD VDD) pmos m=Mcm21 w=Wcm2 l=Lcm2
 ends op
 
-simulatorOptions options reltol=100e-6 vabstol=1e-6 iabstol=1e-12 \
-                         temp=27 tnom=27 homotopy=all gmin=1e-12 rforce=1 \
-                         save=selected dc_pivot_check=yes
+simulatorOptions options reltol=100e-6 vabstol=1e-6 iabstol=1e-12   \
+                         temp=27 tnom=27 homotopy=all gmin=1e-12    \
+                         rforce=1 save=selected dc_pivot_check=yes
 
-save DUT.M*:gm DUT.M*:gds DUT.M*:id DUT.M*:gmoverid \
-     DUT.M*:vdsat DUT.M*:vgs DUT.M*:vds \
-     DUT.M*:vbs DUT.M*:vth DUT.M*:region \
-     DUT.X DUT.Y DUT.Z DUT.B DUT.CM DUT:VDD DUT:VSS VDD VSS OUT \
+save DUT.M*:gm DUT.M*:gds DUT.M*:id DUT.M*:gmoverid DUT.M*:region   \
+     DUT.M*:vdsat DUT.M*:vgs DUT.M*:vds DUT.M*:vbs DUT.M*:vth       \
+     DUT.X DUT.Y DUT.Z DUT.B DUT.CM DUT:VDD DUT:VSS VDD VSS OUT     \
      DUT:O OUT OUT_IDEAL INN INP
 
 fb1 alter dev=INPSW param=position value=1
