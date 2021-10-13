@@ -55,20 +55,20 @@ VICM (INCM CM) vsource type=dc dc=vicm
 
 subckt op B INP INN O VDD VSS
     // Biasing and Output
-    MNCM11 (B  B VSS VSS) nmos m=Mcm11 w=Wcm1 l=Lcm1
-    MNCM12 (CM B VSS VSS) nmos m=Mcm12 w=Wcm1 l=Lcm1
-    MNCM13 (O  B VSS VSS) nmos m=Mcm13 w=Wcm1 l=Lcm1
+    MNCM11 (B  B VSS VSS) nfet m=Mcm11 w=Wcm1 l=Lcm1
+    MNCM12 (CM B VSS VSS) nfet m=Mcm12 w=Wcm1 l=Lcm1
+    MNCM13 (O  B VSS VSS) nfet m=Mcm13 w=Wcm1 l=Lcm1
 
     // Differential Pair
-    MND11  (Y INP CM VSS) nmos m=Md w=Wd l=Ld
-    MND12  (X INN CM VSS) nmos m=Md w=Wd l=Ld
+    MND11  (Y INP CM VSS) nfet m=Md w=Wd l=Ld
+    MND12  (X INN CM VSS) nfet m=Md w=Wd l=Ld
 
     // PMOS Current Mirror
-    MPCM21 (X X VDD VDD) pmos m=Mcm21 w=Wcm2 l=Lcm2
-    MPCM22 (Y X VDD VDD) pmos m=Mcm22 w=Wcm2 l=Lcm2
+    MPCM21 (X X VDD VDD) pfet m=Mcm21 w=Wcm2 l=Lcm2
+    MPCM22 (Y X VDD VDD) pfet m=Mcm22 w=Wcm2 l=Lcm2
 
     // Common Source Output Stage
-    MNCS   (O Y VDD VDD) pmos m=Mcs w=Wcs l=Lcs
+    MNCS   (O Y VDD VDD) pfet m=Mcs w=Wcs l=Lcs
 
     // Compensation
     C0     (O A) capacitor c=cc // m=Mcap w=Wcap l=Wcap
@@ -79,10 +79,10 @@ simulatorOptions options reltol=100e-6 vabstol=1e-6 iabstol=1e-12   \
                          temp=27 tnom=27 homotopy=all gmin=1e-12    \
                          rforce=1 save=selected dc_pivot_check=yes
 
-save DUT.M*:gm DUT.M*:gds DUT.M*:id DUT.M*:gmoverid DUT.M*:region   \
-     DUT.M*:vdsat DUT.M*:vgs DUT.M*:vds DUT.M*:vbs DUT.M*:vth       \
-     DUT.X DUT.Y DUT.Z DUT.B DUT.CM DUT:VDD DUT:VSS VDD VSS OUT     \
-     DUT:O OUT OUT_IDEAL INN INP
+save DUT.M*.m1:gm DUT.M*.m1:gds DUT.M*.m1:id DUT.M*.m1:gmoverid DUT.M*.m1:region \
+     DUT.M*.m1:vdsat DUT.M*.m1:vgs DUT.M*.m1:vds DUT.M*.m1:vbs DUT.M*.m1:vth     \
+     DUT.X DUT.Y DUT.Z DUT.B DUT.CM DUT:VDD DUT:VSS DUT:O                        \
+     VDD VSS OUT OUT OUT_IDEAL INN INP
 
 fb1 alter dev=INPSW param=position value=1
 fb2 alter dev=INNSW param=position value=1
