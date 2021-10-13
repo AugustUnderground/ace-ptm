@@ -26,8 +26,8 @@ in `chr/ptm-<n|p>mos.scs` or passing the include directory to spectre via the
 `-I` flag and running:
 
 ```bash
-$ spectre -I./pdk/XXX ./chr/ptm-nmos.scs
-$ spectre -I./pdk/XXX ./chr/ptm-pmos.scs
+$ spectre -I./pdk/XXX ./chr/nmos.scs
+$ spectre -I./pdk/XXX ./chr/pmos.scs
 ```
 
 ## Circuits
