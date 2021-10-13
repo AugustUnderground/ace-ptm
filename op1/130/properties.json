@@ -1,0 +1,795 @@
+{
+  "environment":"SingleEndedOpampEnvironment",
+  "models":"./resource/ptm/pdk/XXX",
+  "parameters":{
+    "vs":{
+      "init":0.2,
+      "comment":"step in differential input voltage to simulate slewing behaviour"
+    },
+    "cl":{
+      "init":5e-12,
+      "comment":"load capacitance"
+    },
+    "rl":{
+      "init":100e6,
+      "comment":"load resistance"
+    },
+    "i0":{
+      "init":3e-6,
+      "comment":"biasing current"
+    },
+    "vsup":{
+      "init":1.2,
+      "comment":"supply voltage"
+    },
+    "Lcm1":{
+      "min":130e-9,
+      "init":300e-9,
+      "max":100e-6,
+      "grid":1e-9,
+      "sizing":true
+    },
+    "Lcm2":{
+      "min":130e-9,
+      "init":300e-9,
+      "max":100e-6,
+      "grid":1e-9,
+      "sizing":true
+    },
+    "Lcs":{
+      "min":130e-9,
+      "init":300e-9,
+      "max":100e-6,
+      "grid":1e-9,
+      "sizing":true
+    },
+    "Ld":{
+      "min":130e-9,
+      "init":300e-9,
+      "max":100e-6,
+      "grid":1e-9,
+      "sizing":true
+    },
+    "Wcm1":{
+      "min":500e-9,
+      "init":1e-6,
+      "grid":1e-9,
+      "max":1e-3,
+      "sizing":true
+    },
+    "Wcm2":{
+      "min":500e-9,
+      "init":1e-6,
+      "grid":1e-9,
+      "max":1e-3,
+      "sizing":true
+    },
+    "Wcs":{
+      "min":500e-9,
+      "init":1e-6,
+      "grid":1e-9,
+      "max":1e-3,
+      "sizing":true
+    },
+    "Wd":{
+      "min":500e-9,
+      "init":1e-6,
+      "grid":1e-9,
+      "max":1e-3,
+      "sizing":true
+    },
+    "Mcm11":{
+      "min":1,
+      "init": 1,
+      "grid": 1,
+      "max":3,
+      "sizing":true
+    },
+    "Mcm12":{
+      "min":1,
+      "init": 1,
+      "grid": 1,
+      "max":16,
+      "sizing":true
+    },
+    "Mcm13":{
+      "min" : 2,
+      "init" : 2,
+      "grid" : 1,
+      "max": 2,
+      "sizing":true
+    },
+    "Mcm21":{
+      "min" : 1,
+      "init" : 1,
+      "grid" : 1,
+      "max":3,
+      "sizing":true
+    },
+    "Mcm22":{
+      "min" : 1,
+      "init" : 4,
+      "grid" : 1,
+      "max": 20,
+      "sizing":true
+    },
+    "Mcs":{
+      "min" : 2,
+      "init" : 2,
+      "grid" : 1,
+      "max": 2,
+      "sizing":true
+    },
+    "Md":{
+      "min" : 2,
+      "init" : 2,
+      "grid" : 1,
+      "max": 2,
+      "sizing":true
+    },
+    "cc":{
+      "init":3e-12,
+      "comment":"compensation capacitance"
+    },
+    "rc":{
+      "init":1e6,
+      "comment":"compensation resistance"
+    }
+  },
+  "performances":{
+      "dcop":{
+        "MNCM11:gm":{
+          "unit":"S",
+          "reference":"DUT.MNCM11.m1:gm",
+          "comment" : "transconductance of MNCM11"
+        },
+        "MNCM11:gds":{
+          "unit":"S",
+          "reference":"DUT.MNCM11.m1:gds",
+          "comment" : "output conductance of MNCM11"
+        },
+        "MNCM11:id":{
+          "unit":"A",
+          "reference":"DUT.MNCM11.m1:id",
+          "comment" : "drain current of MNCM11"
+        },
+        "MNCM11:gmoverid":{
+          "unit":"1/V",
+          "reference":"DUT.MNCM11.m1:gmoverid",
+          "comment" : "gmoverid of MNCM11"
+        },
+        "MNCM11:vdsat":{
+          "unit":"V",
+          "reference":"DUT.MNCM11.m1:vdsat",
+          "comment" : "saturation voltage of MNCM11"
+        },
+        "MNCM11:vgs":{
+          "unit":"V",
+          "reference":"DUT.MNCM11.m1:vgs",
+          "comment" : "gate-source voltage of MNCM11"
+        },
+        "MNCM11:vds":{
+          "unit":"V",
+          "reference":"DUT.MNCM11.m1:vds",
+          "comment" : "drain-source voltage of MNCM11"
+        },
+        "MNCM11:vbs":{
+          "unit":"V",
+          "reference":"DUT.MNCM11.m1:vbs",
+          "comment" : "bulk-source voltage of MNCM11"
+        },
+        "MNCM11:vth":{
+          "unit":"V",
+          "reference":"DUT.MNCM11.m1:vth",
+          "comment" : "threshold voltage of MNCM11"
+        },
+        "MNCM12:gm":{
+          "unit":"S",
+          "reference":"DUT.MNCM12.m1:gm",
+          "comment" : "transconductance of MNCM12"
+        },
+        "MNCM12:gds":{
+          "unit":"S",
+          "reference":"DUT.MNCM12.m1:gds",
+          "comment" : "output conductance of MNCM12"
+        },
+        "MNCM12:id":{
+          "unit":"A",
+          "reference":"DUT.MNCM12.m1:id",
+          "comment" : "drain current of MNCM12"
+        },
+        "MNCM12:gmoverid":{
+          "unit":"1/V",
+          "reference":"DUT.MNCM12.m1:gmoverid",
+          "comment" : "gmoverid of MNCM12"
+        },
+        "MNCM12:vdsat":{
+          "unit":"V",
+          "reference":"DUT.MNCM12.m1:vdsat",
+          "comment" : "saturation voltage of MNCM12"
+        },
+        "MNCM12:vgs":{
+          "unit":"V",
+          "reference":"DUT.MNCM12.m1:vgs",
+          "comment" : "gate-source voltage of MNCM12"
+        },
+        "MNCM12:vds":{
+          "unit":"V",
+          "reference":"DUT.MNCM12.m1:vds",
+          "comment" : "drain-source voltage of MNCM12"
+        },
+        "MNCM12:vbs":{
+          "unit":"V",
+          "reference":"DUT.MNCM12.m1:vbs",
+          "comment" : "bulk-source voltage of MNCM12"
+        },
+        "MNCM12:vth":{
+          "unit":"V",
+          "reference":"DUT.MNCM12.m1:vth",
+          "comment" : "threshold voltage of MNCM12"
+        },
+        "MNCM13:gm":{
+          "unit":"S",
+          "reference":"DUT.MNCM13.m1:gm",
+          "comment" : "transconductance of MNCM13"
+        },
+        "MNCM13:gds":{
+          "unit":"S",
+          "reference":"DUT.MNCM13.m1:gds",
+          "comment" : "output conductance of MNCM13"
+        },
+        "MNCM13:id":{
+          "unit":"A",
+          "reference":"DUT.MNCM13.m1:id",
+          "comment" : "drain current of MNCM13"
+        },
+        "MNCM13:gmoverid":{
+          "unit":"1/V",
+          "reference":"DUT.MNCM13.m1:gmoverid",
+          "comment" : "gmoverid of MNCM13"
+        },
+        "MNCM13:vdsat":{
+          "unit":"V",
+          "reference":"DUT.MNCM13.m1:vdsat",
+          "comment" : "saturation voltage of MNCM13"
+        },
+        "MNCM13:vgs":{
+          "unit":"V",
+          "reference":"DUT.MNCM13.m1:vgs",
+          "comment" : "gate-source voltage of MNCM13"
+        },
+        "MNCM13:vds":{
+          "unit":"V",
+          "reference":"DUT.MNCM13.m1:vds",
+          "comment" : "drain-source voltage of MNCM13"
+        },
+        "MNCM13:vbs":{
+          "unit":"V",
+          "reference":"DUT.MNCM13.m1:vbs",
+          "comment" : "bulk-source voltage of MNCM13"
+        },
+        "MNCM13:vth":{
+          "unit":"V",
+          "reference":"DUT.MNCM13.m1:vth",
+          "comment" : "threshold voltage of MNCM13"
+        },
+        "MND11:gm":{
+          "unit":"S",
+          "reference":"DUT.MND11.m1:gm",
+          "comment" : "transconductance of MND11"
+        },
+        "MND11:gds":{
+          "unit":"S",
+          "reference":"DUT.MND11.m1:gds",
+          "comment" : "output conductance of MND11"
+        },
+        "MND11:id":{
+          "unit":"A",
+          "reference":"DUT.MND11.m1:id",
+          "comment" : "drain current of MND11"
+        },
+        "MND11:gmoverid":{
+          "unit":"1/V",
+          "reference":"DUT.MND11.m1:gmoverid",
+          "comment" : "gmoverid of MND11"
+        },
+        "MND11:vdsat":{
+          "unit":"V",
+          "reference":"DUT.MND11.m1:vdsat",
+          "comment" : "saturation voltage of MND11"
+        },
+        "MND11:vgs":{
+          "unit":"V",
+          "reference":"DUT.MND11.m1:vgs",
+          "comment" : "gate-source voltage of MND11"
+        },
+        "MND11:vds":{
+          "unit":"V",
+          "reference":"DUT.MND11.m1:vds",
+          "comment" : "drain-source voltage of MND11"
+        },
+        "MND11:vbs":{
+          "unit":"V",
+          "reference":"DUT.MND11.m1:vbs",
+          "comment" : "bulk-source voltage of MND11"
+        },
+        "MND11:vth":{
+          "unit":"V",
+          "reference":"DUT.MND11.m1:vth",
+          "comment" : "threshold voltage of MND11"
+        },
+        "MND12:gm":{
+          "unit":"S",
+          "reference":"DUT.MND12.m1:gm",
+          "comment" : "transconductance of MND12"
+        },
+        "MND12:gds":{
+          "unit":"S",
+          "reference":"DUT.MND12.m1:gds",
+          "comment" : "output conductance of MND12"
+        },
+        "MND12:id":{
+          "unit":"A",
+          "reference":"DUT.MND12.m1:id",
+          "comment" : "drain current of MND12"
+        },
+        "MND12:gmoverid":{
+          "unit":"1/V",
+          "reference":"DUT.MND12.m1:gmoverid",
+          "comment" : "gmoverid of MND12"
+        },
+        "MND12:vdsat":{
+          "unit":"V",
+          "reference":"DUT.MND12.m1:vdsat",
+          "comment" : "saturation voltage of MND12"
+        },
+        "MND12:vgs":{
+          "unit":"V",
+          "reference":"DUT.MND12.m1:vgs",
+          "comment" : "gate-source voltage of MND12"
+        },
+        "MND12:vds":{
+          "unit":"V",
+          "reference":"DUT.MND12.m1:vds",
+          "comment" : "drain-source voltage of MND12"
+        },
+        "MND12:vbs":{
+          "unit":"V",
+          "reference":"DUT.MND12.m1:vbs",
+          "comment" : "bulk-source voltage of MND12"
+        },
+        "MND12:vth":{
+          "unit":"V",
+          "reference":"DUT.MND12.m1:vth",
+          "comment" : "threshold voltage of MND12"
+        },
+        "MPCM21:gm":{
+          "unit":"S",
+          "reference":"DUT.MPCM21.m1:gm",
+          "comment" : "transconductance of MPCM21"
+        },
+        "MPCM21:gds":{
+          "unit":"S",
+          "reference":"DUT.MPCM21.m1:gds",
+          "comment" : "output conductance of MPCM21"
+        },
+        "MPCM21:id":{
+          "unit":"A",
+          "reference":"DUT.MPCM21.m1:id",
+          "comment" : "drain current of MPCM21"
+        },
+        "MPCM21:gmoverid":{
+          "unit":"1/V",
+          "reference":"DUT.MPCM21.m1:gmoverid",
+          "comment" : "gmoverid of MPCM21"
+        },
+        "MPCM21:vdsat":{
+          "unit":"V",
+          "reference":"DUT.MPCM21.m1:vdsat",
+          "comment" : "saturation voltage of MPCM21"
+        },
+        "MPCM21:vgs":{
+          "unit":"V",
+          "reference":"DUT.MPCM21.m1:vgs",
+          "comment" : "gate-source voltage of MPCM21"
+        },
+        "MPCM21:vds":{
+          "unit":"V",
+          "reference":"DUT.MPCM21.m1:vds",
+          "comment" : "drain-source voltage of MPCM21"
+        },
+        "MPCM21:vbs":{
+          "unit":"V",
+          "reference":"DUT.MPCM21.m1:vbs",
+          "comment" : "bulk-source voltage of MPCM21"
+        },
+        "MPCM21:vth":{
+          "unit":"V",
+          "reference":"DUT.MPCM21.m1:vth",
+          "comment" : "threshold voltage of MPCM21"
+        },
+        "MPCM22:gm":{
+          "unit":"S",
+          "reference":"DUT.MPCM22.m1:gm",
+          "comment" : "transconductance of MPCM22"
+        },
+        "MPCM22:gds":{
+          "unit":"S",
+          "reference":"DUT.MPCM22.m1:gds",
+          "comment" : "output conductance of MPCM22"
+        },
+        "MPCM22:id":{
+          "unit":"A",
+          "reference":"DUT.MPCM22.m1:id",
+          "comment" : "drain current of MPCM22"
+        },
+        "MPCM22:gmoverid":{
+          "unit":"1/V",
+          "reference":"DUT.MPCM22.m1:gmoverid",
+          "comment" : "gmoverid of MPCM22"
+        },
+        "MPCM22:vdsat":{
+          "unit":"V",
+          "reference":"DUT.MPCM22.m1:vdsat",
+          "comment" : "saturation voltage of MPCM22"
+        },
+        "MPCM22:vgs":{
+          "unit":"V",
+          "reference":"DUT.MPCM22.m1:vgs",
+          "comment" : "gate-source voltage of MPCM22"
+        },
+        "MPCM22:vds":{
+          "unit":"V",
+          "reference":"DUT.MPCM22.m1:vds",
+          "comment" : "drain-source voltage of MPCM22"
+        },
+        "MPCM22:vbs":{
+          "unit":"V",
+          "reference":"DUT.MPCM22.m1:vbs",
+          "comment" : "bulk-source voltage of MPCM22"
+        },
+        "MPCM22:vth":{
+          "unit":"V",
+          "reference":"DUT.MPCM22.m1:vth",
+          "comment" : "threshold voltage of MPCM22"
+        },
+        "MNCS:gm":{
+          "unit":"S",
+          "reference":"DUT.MNCS.m1:gm",
+          "comment" : "transconductance of MNCS"
+        },
+        "MNCS:gds":{
+          "unit":"S",
+          "reference":"DUT.MNCS.m1:gds",
+          "comment" : "output conductance of MNCS"
+        },
+        "MNCS:id":{
+          "unit":"A",
+          "reference":"DUT.MNCS.m1:id",
+          "comment" : "drain current of MNCS"
+        },
+        "MNCS:gmoverid":{
+          "unit":"1/V",
+          "reference":"DUT.MNCS.m1:gmoverid",
+          "comment" : "gmoverid of MNCS"
+        },
+        "MNCS:vdsat":{
+          "unit":"V",
+          "reference":"DUT.MNCS.m1:vdsat",
+          "comment" : "saturation voltage of MNCS"
+        },
+        "MNCS:vgs":{
+          "unit":"V",
+          "reference":"DUT.MNCS.m1:vgs",
+          "comment" : "gate-source voltage of MNCS"
+        },
+        "MNCS:vds":{
+          "unit":"V",
+          "reference":"DUT.MNCS.m1:vds",
+          "comment" : "drain-source voltage of MNCS"
+        },
+        "MNCS:vbs":{
+          "unit":"V",
+          "reference":"DUT.MNCS.m1:vbs",
+          "comment" : "bulk-source voltage of MNCS"
+        },
+        "MNCS:vth":{
+          "unit":"V",
+          "reference":"DUT.MNCS.m1:vth",
+          "comment" : "threshold voltage of MNCS"
+        },
+        "X":{
+          "unit":"V",
+          "reference":"DUT.X",
+          "comment" : "Voltage at node X"
+        },
+        "Y":{
+          "unit":"V",
+          "reference":"DUT.Y",
+          "comment" : "Voltage at node Y"
+        },
+        "O":{
+          "unit":"V",
+          "reference":"DUT.O",
+          "comment" : "Voltage at node O"
+        },
+        "B":{
+          "unit":"V",
+          "reference":"DUT.B",
+          "comment" : "Voltage at node B"
+        },
+        "CM":{
+          "unit":"V",
+          "reference":"DUT.CM",
+          "comment" : "Voltage at node CM"
+        },
+        "idd":{
+          "unit":"V",
+          "reference":"DUT.B",
+          "comment" : "Voltage at node B"
+        },
+        "iss":{
+          "unit":"V",
+          "reference":"DUT:VSS",
+          "comment" : "Voltage at node CM"
+        }
+      },
+
+      "dcmatch": {
+        "voff_stat":{
+          "unit":"V",
+          "reference":"totalOutput.sigmaOut",
+          "comment" : "Statistical Offset"
+        },
+        "voff_sys":{
+          "unit":"Hz",
+          "reference":"totalOutput.dcOp",
+          "comment" : "Systematic Offset"
+        },
+        "MNCM11/avt/contribution":{
+          "unit":"V",
+          "reference":"DUT.MNCM11.Avt_nmos(m).Contribution"
+        },
+        "MNCM11/avt/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MNCM11.Avt_nmos(m).Sensitivity"
+        },
+        "MNCM11/au0/contribution":{
+          "unit":"V",
+          "reference":"DUT.MNCM11.Au0_nmos(m).Contribution"
+        },
+        "MNCM11/au0/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MNCM11.Au0_nmos(m).Sensitivity"
+        },        
+        "MNCM12/avt/contribution":{
+          "unit":"V",
+          "reference":"DUT.MNCM12.Avt_nmos(m).Contribution"
+        },
+        "MNCM12/avt/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MNCM12.Avt_nmos(m).Sensitivity"
+        },
+        "MNCM12/au0/contribution":{
+          "unit":"V",
+          "reference":"DUT.MNCM12.Au0_nmos(m).Contribution"
+        },
+        "MNCM12/au0/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MNCM12.Au0_nmos(m).Sensitivity"
+        },
+        "MNCM13/avt/contribution":{
+          "unit":"V",
+          "reference":"DUT.MNCM13.Avt_nmos(m).Contribution"
+        },
+        "MNCM13/avt/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MNCM13.Avt_nmos(m).Sensitivity"
+        },
+        "MNCM13/au0/contribution":{
+          "unit":"V",
+          "reference":"DUT.MNCM13.Au0_nmos(m).Contribution"
+        },
+        "MNCM13/au0/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MNCM13.Au0_nmos(m).Sensitivity"
+        },
+        "MND11/avt/contribution":{
+          "unit":"V",
+          "reference":"DUT.MND11.Avt_nmos(m).Contribution"
+        },
+        "MND11/avt/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MND11.Avt_nmos(m).Sensitivity"
+        },
+        "MND11/au0/contribution":{
+          "unit":"V",
+          "reference":"DUT.MND11.Au0_nmos(m).Contribution"
+        },
+        "MND11/au0/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MND11.Au0_nmos(m).Sensitivity"
+        },
+        "MND12/avt/contribution":{
+          "unit":"V",
+          "reference":"DUT.MND12.Avt_nmos(m).Contribution"
+        },
+        "MND12/avt/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MND12.Avt_nmos(m).Sensitivity"
+        },
+        "MND12/au0/contribution":{
+          "unit":"V",
+          "reference":"DUT.MND12.Au0_nmos(m).Contribution"
+        },
+        "MND12/au0/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MND12.Au0_nmos(m).Sensitivity"
+        },
+        "MNCS/avt/contribution":{
+          "unit":"V",
+          "reference":"DUT.MNCS.Avt_nmos(m).Contribution"
+        },
+        "MNCS/avt/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MNCS.Avt_nmos(m).Sensitivity"
+        },
+        "MNCS/au0/contribution":{
+          "unit":"V",
+          "reference":"DUT.MNCS.Au0_nmos(m).Contribution"
+        },
+        "MNCS/au0/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MNCS.Au0_nmos(m).Sensitivity"
+        },        
+        "MPCM21/avt/contribution":{
+          "unit":"V",
+          "reference":"DUT.MPCM21.Avt_pmos(m).Contribution"
+        },
+        "MPCM21/avt/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MPCM21.Avt_pmos(m).Sensitivity"
+        },
+        "MPCM21/au0/contribution":{
+          "unit":"V",
+          "reference":"DUT.MPCM21.Au0_pmos(m).Contribution"
+        },
+        "MPCM21/au0/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MPCM21.Au0_pmos(m).Sensitivity"
+        },     
+        "MPCM22/avt/contribution":{
+          "unit":"V",
+          "reference":"DUT.MPCM22.Avt_pmos(m).Contribution"
+        },
+        "MPCM22/avt/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MPCM22.Avt_pmos(m).Sensitivity"
+        },
+        "MPCM22/au0/contribution":{
+          "unit":"V",
+          "reference":"DUT.MPCM22.Au0_pmos(m).Contribution"
+        },
+        "MPCM22/au0/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MPCM22.Au0_pmos(m).Sensitivity"
+        }
+      },
+
+      "stb":{
+        "a_0":{
+          "unit":"dB",
+          "comment":"DC Gain"
+        },
+        "ugbw":{
+          "unit":"Hz",
+          "comment":"Unity-Gain Bandwidth"
+        },
+        "pm":{
+          "unit":"deg",
+          "comment":"Phase-Margin"
+        },
+        "gm":{
+          "unit":"dB",
+          "comment":"Gain-Margin"
+        }
+      },
+
+      "tran":{
+        "sr_r":{
+          "unit":"V/s",
+          "comment":"rising slew-rate"
+        },
+        "overshoot_r":{
+          "unit":"1",
+          "comment":"rising overshoot"
+        },
+        "sr_f":{
+          "unit":"V/s",
+          "comment":"falling slew-rate"
+        },
+        "overshoot_f":{
+          "unit":"1",
+          "comment":"falling overshoot"
+        }
+      },
+
+      "noise":{
+        "vn_1Hz":{
+          "unit":"V^2/Hz",
+          "comment":"output noise density at 1 Hz" 
+        },
+        "vn_10Hz":{
+          "unit":"V^2/Hz",
+          "comment":"output noise density at 10 Hz" 
+        },
+        "vn_100Hz":{
+          "unit":"V^2/Hz",
+          "comment":"output noise density at 100 Hz" 
+        },
+        "vn_1kHz":{
+          "unit":"V^2/Hz",
+          "comment":"output noise density at 1 kHz" 
+        },
+        "vn_10kHz":{
+          "unit":"V^2/Hz",
+          "comment":"output noise density at 10 kHz" 
+        },
+        "vn_100kHz":{
+          "unit":"V^2/Hz",
+          "comment":"output noise density at 100 kHz" 
+        }
+      },
+
+      "dc1":{
+        "v_ol":{
+          "unit":"V",
+          "comment":"minimal output voltage" 
+        },
+        "v_oh,":{
+          "unit":"V",
+          "comment":"maximal output voltage" 
+        }
+      },
+
+      "xf":{
+        "psrr_p":{
+          "unit":"dB",
+          "comment":"power supply rejection ration wrt. to the positive supply rail" 
+        },
+        "psrr_n,":{
+          "unit":"dB",
+          "comment":"power supply rejection ration wrt. to the negative supply rail" 
+        },
+        "cmrr,":{
+          "unit":"dB",
+          "comment":"common mode rejection ration" 
+        }
+      },
+
+      "ac":{
+        "v_il":{
+          "unit":"V",
+          "comment":"minimal input voltage" 
+        },
+        "v_ih,":{
+          "unit":"V",
+          "comment":"maximal v_il voltage" 
+        }
+      },
+
+      "dc3":{
+        "i_out_min":{
+          "unit":"A",
+          "comment":"minimal output current" 
+        }
+      },
+
+      "dc4":{
+        "i_out_max":{
+          "unit":"A",
+          "comment":"maximal output current" 
+        }
+      }
+    }
+  }
