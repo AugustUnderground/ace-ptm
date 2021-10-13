@@ -6,8 +6,13 @@ mainly intended as backend for [AC²E](https://github.com/matthschw/ace).
 
 ## Technology
 
-Includes 130nm (`./pdk/ptm-130.scs`), 90nm (`./pdk/ptm-090.scs`) and 45nm
-(`./pdk/ptm-045.scs`) models.
+Includes 
+
++ 130nm (`./pdk/ptm-130.scs`)
++ 90nm (`./pdk/ptm-090.scs`) 
++ 65nm (`./pdk/ptm-065.scs`)
++ 45nm (`./pdk/ptm-045.scs`)
++ 32nm (`./pdk/ptm-032.scs`)
 
 ## Device Characterization
 
