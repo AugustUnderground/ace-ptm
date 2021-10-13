@@ -140,362 +140,362 @@
       "dcop":{
         "MNCM11:gm":{
           "unit":"S",
-          "reference":"DUT.MNCM11:gm",
+          "reference":"DUT.MNCM11.m1:gm",
           "comment" : "transconductance of MNCM11"
         },
         "MNCM11:gds":{
           "unit":"S",
-          "reference":"DUT.MNCM11:gds",
+          "reference":"DUT.MNCM11.m1:gds",
           "comment" : "output conductance of MNCM11"
         },
         "MNCM11:id":{
           "unit":"A",
-          "reference":"DUT.MNCM11:id",
+          "reference":"DUT.MNCM11.m1:id",
           "comment" : "drain current of MNCM11"
         },
         "MNCM11:gmoverid":{
           "unit":"1/V",
-          "reference":"DUT.MNCM11:gmoverid",
+          "reference":"DUT.MNCM11.m1:gmoverid",
           "comment" : "gmoverid of MNCM11"
         },
         "MNCM11:vdsat":{
           "unit":"V",
-          "reference":"DUT.MNCM11:vdsat",
+          "reference":"DUT.MNCM11.m1:vdsat",
           "comment" : "saturation voltage of MNCM11"
         },
         "MNCM11:vgs":{
           "unit":"V",
-          "reference":"DUT.MNCM11:vgs",
+          "reference":"DUT.MNCM11.m1:vgs",
           "comment" : "gate-source voltage of MNCM11"
         },
         "MNCM11:vds":{
           "unit":"V",
-          "reference":"DUT.MNCM11:vds",
+          "reference":"DUT.MNCM11.m1:vds",
           "comment" : "drain-source voltage of MNCM11"
         },
         "MNCM11:vbs":{
           "unit":"V",
-          "reference":"DUT.MNCM11:vbs",
+          "reference":"DUT.MNCM11.m1:vbs",
           "comment" : "bulk-source voltage of MNCM11"
         },
         "MNCM11:vth":{
           "unit":"V",
-          "reference":"DUT.MNCM11:vth",
+          "reference":"DUT.MNCM11.m1:vth",
           "comment" : "threshold voltage of MNCM11"
         },
         "MNCM12:gm":{
           "unit":"S",
-          "reference":"DUT.MNCM12:gm",
+          "reference":"DUT.MNCM12.m1:gm",
           "comment" : "transconductance of MNCM12"
         },
         "MNCM12:gds":{
           "unit":"S",
-          "reference":"DUT.MNCM12:gds",
+          "reference":"DUT.MNCM12.m1:gds",
           "comment" : "output conductance of MNCM12"
         },
         "MNCM12:id":{
           "unit":"A",
-          "reference":"DUT.MNCM12:id",
+          "reference":"DUT.MNCM12.m1:id",
           "comment" : "drain current of MNCM12"
         },
         "MNCM12:gmoverid":{
           "unit":"1/V",
-          "reference":"DUT.MNCM12:gmoverid",
+          "reference":"DUT.MNCM12.m1:gmoverid",
           "comment" : "gmoverid of MNCM12"
         },
         "MNCM12:vdsat":{
           "unit":"V",
-          "reference":"DUT.MNCM12:vdsat",
+          "reference":"DUT.MNCM12.m1:vdsat",
           "comment" : "saturation voltage of MNCM12"
         },
         "MNCM12:vgs":{
           "unit":"V",
-          "reference":"DUT.MNCM12:vgs",
+          "reference":"DUT.MNCM12.m1:vgs",
           "comment" : "gate-source voltage of MNCM12"
         },
         "MNCM12:vds":{
           "unit":"V",
-          "reference":"DUT.MNCM12:vds",
+          "reference":"DUT.MNCM12.m1:vds",
           "comment" : "drain-source voltage of MNCM12"
         },
         "MNCM12:vbs":{
           "unit":"V",
-          "reference":"DUT.MNCM12:vbs",
+          "reference":"DUT.MNCM12.m1:vbs",
           "comment" : "bulk-source voltage of MNCM12"
         },
         "MNCM12:vth":{
           "unit":"V",
-          "reference":"DUT.MNCM12:vth",
+          "reference":"DUT.MNCM12.m1:vth",
           "comment" : "threshold voltage of MNCM12"
         },
         "MNCM13:gm":{
           "unit":"S",
-          "reference":"DUT.MNCM13:gm",
+          "reference":"DUT.MNCM13.m1:gm",
           "comment" : "transconductance of MNCM13"
         },
         "MNCM13:gds":{
           "unit":"S",
-          "reference":"DUT.MNCM13:gds",
+          "reference":"DUT.MNCM13.m1:gds",
           "comment" : "output conductance of MNCM13"
         },
         "MNCM13:id":{
           "unit":"A",
-          "reference":"DUT.MNCM13:id",
+          "reference":"DUT.MNCM13.m1:id",
           "comment" : "drain current of MNCM13"
         },
         "MNCM13:gmoverid":{
           "unit":"1/V",
-          "reference":"DUT.MNCM13:gmoverid",
+          "reference":"DUT.MNCM13.m1:gmoverid",
           "comment" : "gmoverid of MNCM13"
         },
         "MNCM13:vdsat":{
           "unit":"V",
-          "reference":"DUT.MNCM13:vdsat",
+          "reference":"DUT.MNCM13.m1:vdsat",
           "comment" : "saturation voltage of MNCM13"
         },
         "MNCM13:vgs":{
           "unit":"V",
-          "reference":"DUT.MNCM13:vgs",
+          "reference":"DUT.MNCM13.m1:vgs",
           "comment" : "gate-source voltage of MNCM13"
         },
         "MNCM13:vds":{
           "unit":"V",
-          "reference":"DUT.MNCM13:vds",
+          "reference":"DUT.MNCM13.m1:vds",
           "comment" : "drain-source voltage of MNCM13"
         },
         "MNCM13:vbs":{
           "unit":"V",
-          "reference":"DUT.MNCM13:vbs",
+          "reference":"DUT.MNCM13.m1:vbs",
           "comment" : "bulk-source voltage of MNCM13"
         },
         "MNCM13:vth":{
           "unit":"V",
-          "reference":"DUT.MNCM13:vth",
+          "reference":"DUT.MNCM13.m1:vth",
           "comment" : "threshold voltage of MNCM13"
         },
         "MND11:gm":{
           "unit":"S",
-          "reference":"DUT.MND11:gm",
+          "reference":"DUT.MND11.m1:gm",
           "comment" : "transconductance of MND11"
         },
         "MND11:gds":{
           "unit":"S",
-          "reference":"DUT.MND11:gds",
+          "reference":"DUT.MND11.m1:gds",
           "comment" : "output conductance of MND11"
         },
         "MND11:id":{
           "unit":"A",
-          "reference":"DUT.MND11:id",
+          "reference":"DUT.MND11.m1:id",
           "comment" : "drain current of MND11"
         },
         "MND11:gmoverid":{
           "unit":"1/V",
-          "reference":"DUT.MND11:gmoverid",
+          "reference":"DUT.MND11.m1:gmoverid",
           "comment" : "gmoverid of MND11"
         },
         "MND11:vdsat":{
           "unit":"V",
-          "reference":"DUT.MND11:vdsat",
+          "reference":"DUT.MND11.m1:vdsat",
           "comment" : "saturation voltage of MND11"
         },
         "MND11:vgs":{
           "unit":"V",
-          "reference":"DUT.MND11:vgs",
+          "reference":"DUT.MND11.m1:vgs",
           "comment" : "gate-source voltage of MND11"
         },
         "MND11:vds":{
           "unit":"V",
-          "reference":"DUT.MND11:vds",
+          "reference":"DUT.MND11.m1:vds",
           "comment" : "drain-source voltage of MND11"
         },
         "MND11:vbs":{
           "unit":"V",
-          "reference":"DUT.MND11:vbs",
+          "reference":"DUT.MND11.m1:vbs",
           "comment" : "bulk-source voltage of MND11"
         },
         "MND11:vth":{
           "unit":"V",
-          "reference":"DUT.MND11:vth",
+          "reference":"DUT.MND11.m1:vth",
           "comment" : "threshold voltage of MND11"
         },
         "MND12:gm":{
           "unit":"S",
-          "reference":"DUT.MND12:gm",
+          "reference":"DUT.MND12.m1:gm",
           "comment" : "transconductance of MND12"
         },
         "MND12:gds":{
           "unit":"S",
-          "reference":"DUT.MND12:gds",
+          "reference":"DUT.MND12.m1:gds",
           "comment" : "output conductance of MND12"
         },
         "MND12:id":{
           "unit":"A",
-          "reference":"DUT.MND12:id",
+          "reference":"DUT.MND12.m1:id",
           "comment" : "drain current of MND12"
         },
         "MND12:gmoverid":{
           "unit":"1/V",
-          "reference":"DUT.MND12:gmoverid",
+          "reference":"DUT.MND12.m1:gmoverid",
           "comment" : "gmoverid of MND12"
         },
         "MND12:vdsat":{
           "unit":"V",
-          "reference":"DUT.MND12:vdsat",
+          "reference":"DUT.MND12.m1:vdsat",
           "comment" : "saturation voltage of MND12"
         },
         "MND12:vgs":{
           "unit":"V",
-          "reference":"DUT.MND12:vgs",
+          "reference":"DUT.MND12.m1:vgs",
           "comment" : "gate-source voltage of MND12"
         },
         "MND12:vds":{
           "unit":"V",
-          "reference":"DUT.MND12:vds",
+          "reference":"DUT.MND12.m1:vds",
           "comment" : "drain-source voltage of MND12"
         },
         "MND12:vbs":{
           "unit":"V",
-          "reference":"DUT.MND12:vbs",
+          "reference":"DUT.MND12.m1:vbs",
           "comment" : "bulk-source voltage of MND12"
         },
         "MND12:vth":{
           "unit":"V",
-          "reference":"DUT.MND12:vth",
+          "reference":"DUT.MND12.m1:vth",
           "comment" : "threshold voltage of MND12"
         },
         "MPCM21:gm":{
           "unit":"S",
-          "reference":"DUT.MPCM21:gm",
+          "reference":"DUT.MPCM21.m1:gm",
           "comment" : "transconductance of MPCM21"
         },
         "MPCM21:gds":{
           "unit":"S",
-          "reference":"DUT.MPCM21:gds",
+          "reference":"DUT.MPCM21.m1:gds",
           "comment" : "output conductance of MPCM21"
         },
         "MPCM21:id":{
           "unit":"A",
-          "reference":"DUT.MPCM21:id",
+          "reference":"DUT.MPCM21.m1:id",
           "comment" : "drain current of MPCM21"
         },
         "MPCM21:gmoverid":{
           "unit":"1/V",
-          "reference":"DUT.MPCM21:gmoverid",
+          "reference":"DUT.MPCM21.m1:gmoverid",
           "comment" : "gmoverid of MPCM21"
         },
         "MPCM21:vdsat":{
           "unit":"V",
-          "reference":"DUT.MPCM21:vdsat",
+          "reference":"DUT.MPCM21.m1:vdsat",
           "comment" : "saturation voltage of MPCM21"
         },
         "MPCM21:vgs":{
           "unit":"V",
-          "reference":"DUT.MPCM21:vgs",
+          "reference":"DUT.MPCM21.m1:vgs",
           "comment" : "gate-source voltage of MPCM21"
         },
         "MPCM21:vds":{
           "unit":"V",
-          "reference":"DUT.MPCM21:vds",
+          "reference":"DUT.MPCM21.m1:vds",
           "comment" : "drain-source voltage of MPCM21"
         },
         "MPCM21:vbs":{
           "unit":"V",
-          "reference":"DUT.MPCM21:vbs",
+          "reference":"DUT.MPCM21.m1:vbs",
           "comment" : "bulk-source voltage of MPCM21"
         },
         "MPCM21:vth":{
           "unit":"V",
-          "reference":"DUT.MPCM21:vth",
+          "reference":"DUT.MPCM21.m1:vth",
           "comment" : "threshold voltage of MPCM21"
         },
         "MPCM22:gm":{
           "unit":"S",
-          "reference":"DUT.MPCM22:gm",
+          "reference":"DUT.MPCM22.m1:gm",
           "comment" : "transconductance of MPCM22"
         },
         "MPCM22:gds":{
           "unit":"S",
-          "reference":"DUT.MPCM22:gds",
+          "reference":"DUT.MPCM22.m1:gds",
           "comment" : "output conductance of MPCM22"
         },
         "MPCM22:id":{
           "unit":"A",
-          "reference":"DUT.MPCM22:id",
+          "reference":"DUT.MPCM22.m1:id",
           "comment" : "drain current of MPCM22"
         },
         "MPCM22:gmoverid":{
           "unit":"1/V",
-          "reference":"DUT.MPCM22:gmoverid",
+          "reference":"DUT.MPCM22.m1:gmoverid",
           "comment" : "gmoverid of MPCM22"
         },
         "MPCM22:vdsat":{
           "unit":"V",
-          "reference":"DUT.MPCM22:vdsat",
+          "reference":"DUT.MPCM22.m1:vdsat",
           "comment" : "saturation voltage of MPCM22"
         },
         "MPCM22:vgs":{
           "unit":"V",
-          "reference":"DUT.MPCM22:vgs",
+          "reference":"DUT.MPCM22.m1:vgs",
           "comment" : "gate-source voltage of MPCM22"
         },
         "MPCM22:vds":{
           "unit":"V",
-          "reference":"DUT.MPCM22:vds",
+          "reference":"DUT.MPCM22.m1:vds",
           "comment" : "drain-source voltage of MPCM22"
         },
         "MPCM22:vbs":{
           "unit":"V",
-          "reference":"DUT.MPCM22:vbs",
+          "reference":"DUT.MPCM22.m1:vbs",
           "comment" : "bulk-source voltage of MPCM22"
         },
         "MPCM22:vth":{
           "unit":"V",
-          "reference":"DUT.MPCM22:vth",
+          "reference":"DUT.MPCM22.m1:vth",
           "comment" : "threshold voltage of MPCM22"
         },
         "MNCS:gm":{
           "unit":"S",
-          "reference":"DUT.MNCS:gm",
+          "reference":"DUT.MNCS.m1:gm",
           "comment" : "transconductance of MNCS"
         },
         "MNCS:gds":{
           "unit":"S",
-          "reference":"DUT.MNCS:gds",
+          "reference":"DUT.MNCS.m1:gds",
           "comment" : "output conductance of MNCS"
         },
         "MNCS:id":{
           "unit":"A",
-          "reference":"DUT.MNCS:id",
+          "reference":"DUT.MNCS.m1:id",
           "comment" : "drain current of MNCS"
         },
         "MNCS:gmoverid":{
           "unit":"1/V",
-          "reference":"DUT.MNCS:gmoverid",
+          "reference":"DUT.MNCS.m1:gmoverid",
           "comment" : "gmoverid of MNCS"
         },
         "MNCS:vdsat":{
           "unit":"V",
-          "reference":"DUT.MNCS:vdsat",
+          "reference":"DUT.MNCS.m1:vdsat",
           "comment" : "saturation voltage of MNCS"
         },
         "MNCS:vgs":{
           "unit":"V",
-          "reference":"DUT.MNCS:vgs",
+          "reference":"DUT.MNCS.m1:vgs",
           "comment" : "gate-source voltage of MNCS"
         },
         "MNCS:vds":{
           "unit":"V",
-          "reference":"DUT.MNCS:vds",
+          "reference":"DUT.MNCS.m1:vds",
           "comment" : "drain-source voltage of MNCS"
         },
         "MNCS:vbs":{
           "unit":"V",
-          "reference":"DUT.MNCS:vbs",
+          "reference":"DUT.MNCS.m1:vbs",
           "comment" : "bulk-source voltage of MNCS"
         },
         "MNCS:vth":{
           "unit":"V",
-          "reference":"DUT.MNCS:vth",
+          "reference":"DUT.MNCS.m1:vth",
           "comment" : "threshold voltage of MNCS"
         },
         "X":{
