@@ -6,25 +6,24 @@ mainly intended as backend for [AC²E](https://github.com/matthschw/ace).
 
 ## Technology
 
-Includes 
+Includes the following device models:
 
-+ 130nm (`./pdk/ptm-130.scs`)
-+ 90nm (`./pdk/ptm-090.scs`) 
-+ 65nm (`./pdk/ptm-065.scs`)
-+ 45nm (`./pdk/ptm-045.scs`)
-+ 32nm (`./pdk/ptm-032.scs`)
++ 130nm: `./pdk/130/ptm.scs`
++ 90nm: `./pdk/090/ptm.scs`
++ 65nm: `./pdk/065/ptm.scs`
++ 45nm: `./pdk/045/ptm.scs`
++ 32nm: `./pdk/032/ptm.scs`
 
 ## Device Characterization
 
 The primitive devices may be characterized by adjusting the `include` statement
-in `chr/ptm-<n|p>mos.scs` and running:
+in `chr/ptm-<n|p>mos.scs` or passing the include directory to spectre via the
+`-I` flag and running:
 
 ```bash
-$ spectre ./chr/ptm-nmos.scs
-$ spectre ./chr/ptm-pmos.scs
+$ spectre -I./pdk/XXX ./chr/ptm-nmos.scs
+$ spectre -I./pdk/XXX ./chr/ptm-pmos.scs
 ```
-
-This will produce a `.raw` file.
 
 ## Circuits
 
@@ -35,7 +34,13 @@ This will produce a `.raw` file.
 ### op2
 
 Symmetrical Operational Amplifier with NMOS Differential-Pair.
-Utilize the `SingleEndedOpampEnvironment` for characterization.
+Utilize the `SingleEndedOpampEnvironment` in ACE for characterization.
+
+Or run from the command line via
+
+```bash
+$ spectre -I./pdk/XXX ./op2/input.scs
+```
 
 #### Schematic
 
