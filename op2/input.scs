@@ -53,32 +53,34 @@ VICM (INCM CM) vsource type=dc dc=vicm
 
 subckt op B INP INN O VDD VSS
     // Output NMOS Current Mirror
-    MNCM31 (Z Z VSS VSS) nmos m=Mcm31 w=Wcm3 l=Lcm3
-    MNCM32 (O Z VSS VSS) nmos m=Mcm32 w=Wcm3 l=Lcm3
+    MNCM31 (Z Z VSS VSS) nfet m=Mcm31 w=Wcm3 l=Lcm3
+    MNCM32 (O Z VSS VSS) nfet m=Mcm32 w=Wcm3 l=Lcm3
 
     // Differential Pair
-    MND12 (X INP CM VSS) nmos m=Md w=Wd l=Ld
-    MND11 (Y INN CM VSS) nmos m=Md w=Wd l=Ld
+    MND12 (X INP CM VSS) nfet m=Md w=Wd l=Ld
+    MND11 (Y INN CM VSS) nfet m=Md w=Wd l=Ld
 
     // Biasing Current Mirror
-    MNCM11 (B  B VSS VSS) nmos m=Mcm11 w=Wcm1 l=Lcm1
-    MNCM12 (CM B VSS VSS) nmos m=Mcm12 w=Wcm1 l=Lcm1
+    MNCM11 (B  B VSS VSS) nfet m=Mcm11 w=Wcm1 l=Lcm1
+    MNCM12 (CM B VSS VSS) nfet m=Mcm12 w=Wcm1 l=Lcm1
 
     // Output PMOS Current Mirrors
-    MPCM222 (Z Y VDD VDD) pmos m=Mcm22 w=Wcm2 l=Lcm2
-    MPCM221 (Y Y VDD VDD) pmos m=Mcm21 w=Wcm2 l=Lcm2
-    MPCM212 (O X VDD VDD) pmos m=Mcm22 w=Wcm2 l=Lcm2
-    MPCM211 (X X VDD VDD) pmos m=Mcm21 w=Wcm2 l=Lcm2
+    MPCM222 (Z Y VDD VDD) pfet m=Mcm22 w=Wcm2 l=Lcm2
+    MPCM221 (Y Y VDD VDD) pfet m=Mcm21 w=Wcm2 l=Lcm2
+    MPCM212 (O X VDD VDD) pfet m=Mcm22 w=Wcm2 l=Lcm2
+    MPCM211 (X X VDD VDD) pfet m=Mcm21 w=Wcm2 l=Lcm2
 ends op
 
 simulatorOptions options reltol=100e-6 vabstol=1e-6 iabstol=1e-12   \
                          temp=27 tnom=27 homotopy=all gmin=1e-12    \
                          rforce=1 save=selected dc_pivot_check=yes
 
-save DUT.M*:gm DUT.M*:gds DUT.M*:id DUT.M*:gmoverid DUT.M*:region   \
-     DUT.M*:vdsat DUT.M*:vgs DUT.M*:vds DUT.M*:vbs DUT.M*:vth       \
-     DUT.X DUT.Y DUT.Z DUT.B DUT.CM DUT:VDD DUT:VSS VDD VSS OUT     \
-     DUT:O OUT OUT_IDEAL INN INP
+save DUT.M*.m1:gm DUT.M*.m1:gds DUT.M*.m1:id    \
+     DUT.M*.m1:gmoverid DUT.M*.m1:region        \
+     DUT.M*.m1:vdsat DUT.M*.m1:vth              \
+     DUT.M*.m1:vgs DUT.M*.m1:vds DUT.M*.m1:vbs  \
+     DUT.X DUT.Y DUT.Z DUT.B DUT.CM DUT:O       \
+     DUT:VDD DUT:VSS VDD VSS OUT_IDEAL INN INP
 
 fb1 alter dev=INPSW param=position value=1
 fb2 alter dev=INNSW param=position value=1
