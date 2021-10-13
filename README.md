@@ -14,6 +14,11 @@ Includes the following device models:
 + 45nm: `./pdk/045/ptm.scs`
 + 32nm: `./pdk/032/ptm.scs`
 
+## Statistical Model
+
+The `nfet` and `pfet` sub-circuits add a statistical variation to the `nmos`
+and `pmos` models respectively.
+
 ## Device Characterization
 
 The primitive devices may be characterized by adjusting the `include` statement
