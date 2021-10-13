@@ -8,11 +8,11 @@ mainly intended as backend for [AC²E](https://github.com/matthschw/ace).
 
 Includes the following device models:
 
-+ 130nm: `./pdk/130/ptm.scs`
-+ 90nm: `./pdk/090/ptm.scs`
-+ 65nm: `./pdk/065/ptm.scs`
-+ 45nm: `./pdk/045/ptm.scs`
-+ 32nm: `./pdk/032/ptm.scs`
++ 130nm: `./130/pdk/ptm.scs`
++ 90nm: `./090/pdk/ptm.scs`
++ 65nm: `./065/pdk/ptm.scs`
++ 45nm: `./045/pdk/ptm.scs`
++ 32nm: `./032/pdk/ptm.scs`
 
 ## Statistical Model
 
@@ -26,8 +26,8 @@ in `chr/ptm-<n|p>mos.scs` or passing the include directory to spectre via the
 `-I` flag and running:
 
 ```bash
-$ spectre -I./pdk/XXX ./chr/nmos.scs
-$ spectre -I./pdk/XXX ./chr/pmos.scs
+$ spectre -I./XXX/pdk ./chr/nmos.scs
+$ spectre -I./XXX/pdk ./chr/pmos.scs
 ```
 
 ## Circuits
@@ -44,7 +44,7 @@ Utilize the `SingleEndedOpampEnvironment` in ACE for characterization.
 Or run from the command line via
 
 ```bash
-$ spectre -I./pdk/XXX ./op2/input.scs
+$ spectre -I./XXX/pdk ./XXX/op2/input.scs
 ```
 
 #### Schematic
