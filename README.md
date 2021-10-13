@@ -49,6 +49,6 @@ $ spectre -I./pdk/XXX ./op2/input.scs
 
 #### Schematic
 
-![Symmetrical Operational Amplifier (`op2`)](fig/https://github.com/matthschw/ace/blob/main/figures/op2.png)
+![Symmetrical Operational Amplifier (`op2`)](fig/https://github.com/matthschw/ace/blob/main/figures/op2.png?raw=true)
 
 Parameters and performances can be found in `./op2/properties.json`.
