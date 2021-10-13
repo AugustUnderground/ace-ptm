@@ -152,3 +152,27 @@ model pmos bsim4 type = p
 +rshg    = 0.4       gbmin   = 1e-010    rbpb    = 5         rbpd    = 15         
 +rbps    = 15        rbdb    = 15        rbsb    = 15        ngcon   = 1          
 
+// Statistical Model
+parameters Avt_nmos = 0 Au0_nmos = 0 Avt_pmos = 0 Au0_pmos = 0
+
+statistics{
+    process{ }
+    mismatch{ vary Avt_nmos dist=gauss std=0.009
+              vary Au0_nmos dist=gauss std=0.006
+              vary Avt_pmos dist=gauss std=0.012
+              vary Au0_pmos dist=gauss std=0.009
+    }
+}
+
+// N-Channel MOSFET
+subckt nfet (D G S B)
+    parameters w=10 l=1
+    m1 (D G S B) nmos w=w l=l ad=w*2 as=w*2 pd=w+4 ps=w+4
+ends nfet
+ 
+// P-Channel MOSFET
+subckt pfet (D G S B)
+    parameters w=10 l=1
+    m1 (D G S B) pmos w=w l=l ad=w*2 as=w*2 pd=w+4 ps=w+4
+ends pfet
+ 
