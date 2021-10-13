@@ -1,16 +1,16 @@
-// technology : X-FAB XH035
-// device     : nmos
+// technology : Predictive Technology Models (PTM)
+// device     : PMOS
 
 simulator lang=spectre
 global 0
 
 parameters L=1.0u Vb=0.0 Vg=0.0 Vd=0.0 Vs=0.0 W=1.0u Vdd=1.2
 
-include "../pdk/ptm130.scs"
-//include "../pdk/ptm090.scs"
-//include "../pdk/ptm065.scs"
-//include "../pdk/ptm045.scs"
-//include "../pdk/ptm032.scs"
+include "../pdk/130/ptm.scs"
+//include "../pdk/090/ptm.scs"
+//include "../pdk/065/ptm.scs"
+//include "../pdk/045/ptm.scs"
+//include "../pdk/032/ptm.scs"
 
 save W L M temp \
      M0:vds M0:vgs M0:vbs M0:vdsat M0:vth \

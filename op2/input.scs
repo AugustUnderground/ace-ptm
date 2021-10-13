@@ -3,12 +3,12 @@
 simulator lang=spectre
 global 0
 
-include "ptm032.scs"
+include "ptm.scs"
 
 parameters vs=500m vi=0 vsup=5.0 vcm=0 vo=0 vid=0 vicm=0 \
            a0=1 cl=5p fin=1k i0=3u rl=100M \
-           Lcm1=300n Lcm2=300n Lcm3=300n Ld=300n \
-           Wcm1=1u   Wcm2=1u   Wcm3=1u   Wd=1u \
+           Lcm1=500n Lcm2=500n Lcm3=500n Ld=500n \
+           Wcm1=2u   Wcm2=2u   Wcm3=2u   Wd=2u \
            Mcm11=1   Mcm21=1   Mcm31=2   Md=2 \
            Mcm12=2   Mcm22=4   Mcm32=2 
 
@@ -21,7 +21,7 @@ ends ideal_balun
 VSUPP (VDD CM)  vsource dc=vsup/2 type=dc
 VSUPN (CM  VSS) vsource dc=vsup/2 type=dc
 IREF  (VDD B)   isource dc=i0     type=dc
-VCM   (CM  0)   vsource   dc=0    type=dc 
+VCM   (CM  0)   vsource dc=0      type=dc 
 
 //DUT
 DUT (B INP INN OUT VDD VSS) op
