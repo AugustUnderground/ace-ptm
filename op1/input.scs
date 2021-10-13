@@ -5,13 +5,14 @@ global 0
 
 include "ptm.scs"
 
-parameters vs=500m vi=0 vsup=5.0 vcm=0 vo=0 vid=0 vicm=0            \
-           a0=1 cc=3p cl=5p fin=1k i0=3u rc=1k rl=100M              \
-           Lcm1=500n Lcm2=500n Lcs=500n  Ld=500n Lres=100u          \
-           Wcm1=2.0u Wcm2=2.0u Wcs=2.0u  Wd=2.0u Wres=2.0u Wcap=20u \
-           Mcm11=1   Mcm21=2   Mcs=22    Md=2              Mcap=1   \
-           Mcm12=5   Mcm22=2                                        \
+parameters vs=500m vi=0 vsup=5.0 vcm=0 vo=0 vid=0 vicm=0 \
+           a0=1 cc=3p cl=5p fin=1k i0=3u rc=1k rl=100M   \
+           Lcm1=500n Lcm2=500n Lcs=500n  Ld=500n         \
+           Wcm1=2.0u Wcm2=2.0u Wcs=2.0u  Wd=2.0u         \
+           Mcm11=1   Mcm21=2   Mcs=22    Md=2            \
+           Mcm12=5   Mcm22=2                             \
            Mcm13=22
+// For MOS passives: Lres=100u Wres=2.0u Wcap=20u Mcap=1
 
 subckt ideal_balun d c p n
     K0 (d 0 p c) transformer n1=2
