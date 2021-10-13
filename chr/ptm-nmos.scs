@@ -1,0 +1,41 @@
+// technology : X-FAB XH035
+// device     : nmos
+
+simulator lang=spectre
+global 0
+
+parameters L=1.0u Vb=0.0 Vg=0.0 Vd=0.0 Vs=0.0 W=1.0u Vdd=1.2
+
+include "../pdk/ptm130.scs"
+//include "../pdk/ptm090.scs"
+//include "../pdk/ptm065.scs"
+//include "../pdk/ptm045.scs"
+//include "../pdk/ptm032.scs"
+
+save W L M temp \
+     M0:vds M0:vgs M0:vbs M0:vdsat M0:vth \
+     M0:gm M0:id M0:gds M0:gmbs \
+     M0:self_gain M0:fug M0:gmoverid \
+     M0:cbb M0:csb M0:cdb M0:cgb \
+     M0:css M0:csd M0:csg M0:cds \
+     M0:cdd M0:cdg M0:cbs M0:cbd \
+     M0:cbg M0:cgd M0:cgs M0:cgg \
+
+M0 (D G S B) nmos m=1 w=W l=L 
+
+VD (D S) vsource dc=Vd type=dc
+VG (G S) vsource dc=Vg type=dc
+VS (S 0) vsource dc=Vs type=dc
+VB (B S) vsource dc=Vb type=dc
+
+simulatorOptions options save=selected rawfmt=nutbin
+
+width sweep param=W start=150n stop=50u dec=2 {
+    length sweep param=L start=100n stop=20u dec=5 {
+        bulk sweep param=Vb start=Vs stop=-1.0 step=-0.2 {
+            drain sweep param=Vd start=Vs stop=Vdd step=0.1 {
+                dc dc param=Vg start=Vs stop=Vdd step=0.1 
+            }
+        }   
+    }
+}
