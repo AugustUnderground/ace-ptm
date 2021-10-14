@@ -30,6 +30,10 @@ $ spectre -I./XXX/pdk ./chr/nmos.scs
 $ spectre -I./XXX/pdk ./chr/pmos.scs
 ```
 
+## Testing
+
+Running the `test.pl` script should return no errors.
+
 ## Circuits
 
 ### op1
