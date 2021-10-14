@@ -167,13 +167,15 @@ statistics{
 
 // N-Channel MOSFET
 subckt nfet (D G S B)
-    parameters w=10 l=1
-    m1 (D G S B) nmos w=w l=l ad=w*2 as=w*2 pd=w+4 ps=w+4
+    parameters w=1e-6 l=90e-9
+    m1 (D G S B) nmos w=w l=l delvto=Avt_nmos mulu0=(1.0+Au0_nmos) \
+                      ad=w*2e-12 as=w*2e-12 pd=w+4e-12 ps=w+4e-12
 ends nfet
  
 // P-Channel MOSFET
 subckt pfet (D G S B)
-    parameters w=10 l=1
-    m1 (D G S B) pmos w=w l=l ad=w*2 as=w*2 pd=w+4 ps=w+4
+    parameters w=1e-6 l=90e-9
+    m1 (D G S B) pmos w=w l=l delvto=Avt_pmos mulu0=(1.0+Au0_pmos) \
+                      ad=w*2e-12 as=w*2e-12 pd=w+4e-12 ps=w+4e-12
 ends pfet
  
