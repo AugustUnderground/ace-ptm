@@ -1,6 +1,5 @@
 {
   "environment":"SingleEndedOpampEnvironment",
-  "models":"./resource/ptm/pdk/",
   "parameters":{
     "vs":{
       "init":0.2,
