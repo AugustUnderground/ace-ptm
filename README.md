@@ -52,7 +52,9 @@ $ perl ./src/char.pl --tech 90 --tech 32 --tech 130 --nmos
 ## Testing
 
 Running the test script in `./src/test.pl` should run through all technologies
-once and produce no errors.
+once and produce no errors. There should be spectre `.log` files in the `./src`
+directory afterwards, corresponding to each test. These may give better insight
+as to what might be going wrong.
 
 ## Circuits
 
