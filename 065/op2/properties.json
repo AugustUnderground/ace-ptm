@@ -1,6 +1,5 @@
 {
   "environment":"SingleEndedOpampEnvironment",
-  "models":"./resource/ptm/pdk/",
   "parameters":{
     "vs":{
       "init":0.2,
@@ -23,56 +22,56 @@
       "comment":"supply voltage"
     },
     "Lcm1":{
-      "min":90e-9,
+      "min":65e-9,
       "init":300e-9,
       "max":100e-6,
       "grid":1e-9,
       "sizing":true
     },
     "Lcm2":{
-      "min":90e-9,
+      "min":65e-9,
       "init":300e-9,
       "max":100e-6,
       "grid":1e-9,
       "sizing":true
     },
     "Lcm3":{
-      "min":90e-9,
+      "min":65e-9,
       "init":300e-9,
       "max":100e-6,
       "grid":1e-9,
       "sizing":true
     },
     "Ld":{
-      "min":90e-9,
+      "min":65e-9,
       "init":300e-9,
       "max":100e-6,
       "grid":1e-9,
       "sizing":true
     },
     "Wcm1":{
-      "min":500e-9,
+      "min":100e-9,
       "init":1e-6,
       "grid":1e-9,
       "max":1e-3,
       "sizing":true
     },
     "Wcm2":{
-      "min":500e-9,
+      "min":100e-9,
       "init":1e-6,
       "grid":1e-9,
       "max":1e-3,
       "sizing":true
     },
     "Wcm3":{
-      "min":500e-9,
+      "min":100e-9,
       "init":1e-6,
       "grid":1e-9,
       "max":1e-3,
       "sizing":true
     },
     "Wd":{
-      "min":500e-9,
+      "min":100e-9,
       "init":1e-6,
       "grid":1e-9,
       "max":1e-3,

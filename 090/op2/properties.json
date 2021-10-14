@@ -1,6 +1,5 @@
 {
   "environment":"SingleEndedOpampEnvironment",
-  "models":"./resource/ptm/pdk/XXX",
   "parameters":{
     "vs":{
       "init":0.2,
@@ -36,7 +35,7 @@
       "grid":1e-9,
       "sizing":true
     },
-    "Lcs":{
+    "Lcm3":{
       "min":90e-9,
       "init":300e-9,
       "max":100e-6,
@@ -64,7 +63,7 @@
       "max":1e-3,
       "sizing":true
     },
-    "Wcs":{
+    "Wcm3":{
       "min":500e-9,
       "init":1e-6,
       "grid":1e-9,
@@ -92,13 +91,6 @@
       "max":16,
       "sizing":true
     },
-    "Mcm13":{
-      "min" : 2,
-      "init" : 2,
-      "grid" : 1,
-      "max": 2,
-      "sizing":true
-    },
     "Mcm21":{
       "min" : 1,
       "init" : 1,
@@ -113,13 +105,6 @@
       "max": 20,
       "sizing":true
     },
-    "Mcs":{
-      "min" : 2,
-      "init" : 2,
-      "grid" : 1,
-      "max": 2,
-      "sizing":true
-    },
     "Md":{
       "min" : 2,
       "init" : 2,
@@ -127,13 +112,19 @@
       "max": 2,
       "sizing":true
     },
-    "cc":{
-      "init":3e-12,
-      "comment":"compensation capacitance"
+    "Mcm31":{
+      "min" : 2,
+      "init" : 2,
+      "grid" : 1,
+      "max": 2,
+      "sizing":true
     },
-    "rc":{
-      "init":1e6,
-      "comment":"compensation resistance"
+    "Mcm32":{
+      "min" : 2,
+      "init" : 2,
+      "grid" : 1,
+      "max": 2,
+      "sizing":true
     }
   },
   "performances":{
@@ -228,51 +219,6 @@
           "reference":"DUT.MNCM12.m1:vth",
           "comment" : "threshold voltage of MNCM12"
         },
-        "MNCM13:gm":{
-          "unit":"S",
-          "reference":"DUT.MNCM13.m1:gm",
-          "comment" : "transconductance of MNCM13"
-        },
-        "MNCM13:gds":{
-          "unit":"S",
-          "reference":"DUT.MNCM13.m1:gds",
-          "comment" : "output conductance of MNCM13"
-        },
-        "MNCM13:id":{
-          "unit":"A",
-          "reference":"DUT.MNCM13.m1:id",
-          "comment" : "drain current of MNCM13"
-        },
-        "MNCM13:gmoverid":{
-          "unit":"1/V",
-          "reference":"DUT.MNCM13.m1:gmoverid",
-          "comment" : "gmoverid of MNCM13"
-        },
-        "MNCM13:vdsat":{
-          "unit":"V",
-          "reference":"DUT.MNCM13.m1:vdsat",
-          "comment" : "saturation voltage of MNCM13"
-        },
-        "MNCM13:vgs":{
-          "unit":"V",
-          "reference":"DUT.MNCM13.m1:vgs",
-          "comment" : "gate-source voltage of MNCM13"
-        },
-        "MNCM13:vds":{
-          "unit":"V",
-          "reference":"DUT.MNCM13.m1:vds",
-          "comment" : "drain-source voltage of MNCM13"
-        },
-        "MNCM13:vbs":{
-          "unit":"V",
-          "reference":"DUT.MNCM13.m1:vbs",
-          "comment" : "bulk-source voltage of MNCM13"
-        },
-        "MNCM13:vth":{
-          "unit":"V",
-          "reference":"DUT.MNCM13.m1:vth",
-          "comment" : "threshold voltage of MNCM13"
-        },
         "MND11:gm":{
           "unit":"S",
           "reference":"DUT.MND11.m1:gm",
@@ -363,140 +309,275 @@
           "reference":"DUT.MND12.m1:vth",
           "comment" : "threshold voltage of MND12"
         },
-        "MPCM21:gm":{
+        "MPCM211:gm":{
           "unit":"S",
-          "reference":"DUT.MPCM21.m1:gm",
-          "comment" : "transconductance of MPCM21"
+          "reference":"DUT.MPCM211.m1:gm",
+          "comment" : "transconductance of MPCM211"
         },
-        "MPCM21:gds":{
+        "MPCM211:gds":{
           "unit":"S",
-          "reference":"DUT.MPCM21.m1:gds",
-          "comment" : "output conductance of MPCM21"
+          "reference":"DUT.MPCM211.m1:gds",
+          "comment" : "output conductance of MPCM211"
         },
-        "MPCM21:id":{
+        "MPCM211:id":{
           "unit":"A",
-          "reference":"DUT.MPCM21.m1:id",
-          "comment" : "drain current of MPCM21"
+          "reference":"DUT.MPCM211.m1:id",
+          "comment" : "drain current of MPCM211"
         },
-        "MPCM21:gmoverid":{
+        "MPCM211:gmoverid":{
           "unit":"1/V",
-          "reference":"DUT.MPCM21.m1:gmoverid",
-          "comment" : "gmoverid of MPCM21"
+          "reference":"DUT.MPCM211.m1:gmoverid",
+          "comment" : "gmoverid of MPCM211"
         },
-        "MPCM21:vdsat":{
+        "MPCM211:vdsat":{
           "unit":"V",
-          "reference":"DUT.MPCM21.m1:vdsat",
-          "comment" : "saturation voltage of MPCM21"
+          "reference":"DUT.MPCM211.m1:vdsat",
+          "comment" : "saturation voltage of MPCM211"
         },
-        "MPCM21:vgs":{
+        "MPCM211:vgs":{
           "unit":"V",
-          "reference":"DUT.MPCM21.m1:vgs",
-          "comment" : "gate-source voltage of MPCM21"
+          "reference":"DUT.MPCM211.m1:vgs",
+          "comment" : "gate-source voltage of MPCM211"
         },
-        "MPCM21:vds":{
+        "MPCM211:vds":{
           "unit":"V",
-          "reference":"DUT.MPCM21.m1:vds",
-          "comment" : "drain-source voltage of MPCM21"
+          "reference":"DUT.MPCM211.m1:vds",
+          "comment" : "drain-source voltage of MPCM211"
         },
-        "MPCM21:vbs":{
+        "MPCM211:vbs":{
           "unit":"V",
-          "reference":"DUT.MPCM21.m1:vbs",
-          "comment" : "bulk-source voltage of MPCM21"
+          "reference":"DUT.MPCM211.m1:vbs",
+          "comment" : "bulk-source voltage of MPCM211"
         },
-        "MPCM21:vth":{
+        "MPCM211:vth":{
           "unit":"V",
-          "reference":"DUT.MPCM21.m1:vth",
-          "comment" : "threshold voltage of MPCM21"
+          "reference":"DUT.MPCM211.m1:vth",
+          "comment" : "threshold voltage of MPCM211"
         },
-        "MPCM22:gm":{
+        "MPCM212:gm":{
           "unit":"S",
-          "reference":"DUT.MPCM22.m1:gm",
-          "comment" : "transconductance of MPCM22"
+          "reference":"DUT.MPCM212.m1:gm",
+          "comment" : "transconductance of MPCM212"
         },
-        "MPCM22:gds":{
+        "MPCM212:gds":{
           "unit":"S",
-          "reference":"DUT.MPCM22.m1:gds",
-          "comment" : "output conductance of MPCM22"
+          "reference":"DUT.MPCM212.m1:gds",
+          "comment" : "output conductance of MPCM212"
         },
-        "MPCM22:id":{
+        "MPCM212:id":{
           "unit":"A",
-          "reference":"DUT.MPCM22.m1:id",
-          "comment" : "drain current of MPCM22"
+          "reference":"DUT.MPCM212.m1:id",
+          "comment" : "drain current of MPCM212"
         },
-        "MPCM22:gmoverid":{
+        "MPCM212:gmoverid":{
           "unit":"1/V",
-          "reference":"DUT.MPCM22.m1:gmoverid",
-          "comment" : "gmoverid of MPCM22"
+          "reference":"DUT.MPCM212.m1:gmoverid",
+          "comment" : "gmoverid of MPCM212"
         },
-        "MPCM22:vdsat":{
+        "MPCM212:vdsat":{
           "unit":"V",
-          "reference":"DUT.MPCM22.m1:vdsat",
-          "comment" : "saturation voltage of MPCM22"
+          "reference":"DUT.MPCM212.m1:vdsat",
+          "comment" : "saturation voltage of MPCM212"
         },
-        "MPCM22:vgs":{
+        "MPCM212:vgs":{
           "unit":"V",
-          "reference":"DUT.MPCM22.m1:vgs",
-          "comment" : "gate-source voltage of MPCM22"
+          "reference":"DUT.MPCM212.m1:vgs",
+          "comment" : "gate-source voltage of MPCM212"
         },
-        "MPCM22:vds":{
+        "MPCM212:vds":{
           "unit":"V",
-          "reference":"DUT.MPCM22.m1:vds",
-          "comment" : "drain-source voltage of MPCM22"
+          "reference":"DUT.MPCM212.m1:vds",
+          "comment" : "drain-source voltage of MPCM212"
         },
-        "MPCM22:vbs":{
+        "MPCM212:vbs":{
           "unit":"V",
-          "reference":"DUT.MPCM22.m1:vbs",
-          "comment" : "bulk-source voltage of MPCM22"
+          "reference":"DUT.MPCM212.m1:vbs",
+          "comment" : "bulk-source voltage of MPCM212"
         },
-        "MPCM22:vth":{
+        "MPCM212:vth":{
           "unit":"V",
-          "reference":"DUT.MPCM22.m1:vth",
-          "comment" : "threshold voltage of MPCM22"
+          "reference":"DUT.MPCM212.m1:vth",
+          "comment" : "threshold voltage of MPCM212"
         },
-        "MNCS:gm":{
+        "MPCM221:gm":{
           "unit":"S",
-          "reference":"DUT.MNCS.m1:gm",
-          "comment" : "transconductance of MNCS"
+          "reference":"DUT.MPCM221.m1:gm",
+          "comment" : "transconductance of MPCM221"
         },
-        "MNCS:gds":{
+        "MPCM221:gds":{
           "unit":"S",
-          "reference":"DUT.MNCS.m1:gds",
-          "comment" : "output conductance of MNCS"
+          "reference":"DUT.MPCM221.m1:gds",
+          "comment" : "output conductance of MPCM221"
         },
-        "MNCS:id":{
+        "MPCM221:id":{
           "unit":"A",
-          "reference":"DUT.MNCS.m1:id",
-          "comment" : "drain current of MNCS"
+          "reference":"DUT.MPCM221.m1:id",
+          "comment" : "drain current of MPCM221"
         },
-        "MNCS:gmoverid":{
+        "MPCM221:gmoverid":{
           "unit":"1/V",
-          "reference":"DUT.MNCS.m1:gmoverid",
-          "comment" : "gmoverid of MNCS"
+          "reference":"DUT.MPCM221.m1:gmoverid",
+          "comment" : "gmoverid of MPCM221"
         },
-        "MNCS:vdsat":{
+        "MPCM221:vdsat":{
           "unit":"V",
-          "reference":"DUT.MNCS.m1:vdsat",
-          "comment" : "saturation voltage of MNCS"
+          "reference":"DUT.MPCM221.m1:vdsat",
+          "comment" : "saturation voltage of MPCM221"
         },
-        "MNCS:vgs":{
+        "MPCM221:vgs":{
           "unit":"V",
-          "reference":"DUT.MNCS.m1:vgs",
-          "comment" : "gate-source voltage of MNCS"
+          "reference":"DUT.MPCM221.m1:vgs",
+          "comment" : "gate-source voltage of MPCM221"
         },
-        "MNCS:vds":{
+        "MPCM221:vds":{
           "unit":"V",
-          "reference":"DUT.MNCS.m1:vds",
-          "comment" : "drain-source voltage of MNCS"
+          "reference":"DUT.MPCM221.m1:vds",
+          "comment" : "drain-source voltage of MPCM221"
         },
-        "MNCS:vbs":{
+        "MPCM221:vbs":{
           "unit":"V",
-          "reference":"DUT.MNCS.m1:vbs",
-          "comment" : "bulk-source voltage of MNCS"
+          "reference":"DUT.MPCM221.m1:vbs",
+          "comment" : "bulk-source voltage of MPCM221"
         },
-        "MNCS:vth":{
+        "MPCM221:vth":{
           "unit":"V",
-          "reference":"DUT.MNCS.m1:vth",
-          "comment" : "threshold voltage of MNCS"
+          "reference":"DUT.MPCM221.m1:vth",
+          "comment" : "threshold voltage of MPCM221"
+        },
+        "MPCM222:gm":{
+          "unit":"S",
+          "reference":"DUT.MPCM222.m1:gm",
+          "comment" : "transconductance of MPCM222"
+        },
+        "MPCM222:gds":{
+          "unit":"S",
+          "reference":"DUT.MPCM222.m1:gds",
+          "comment" : "output conductance of MPCM222"
+        },
+        "MPCM222:id":{
+          "unit":"A",
+          "reference":"DUT.MPCM222.m1:id",
+          "comment" : "drain current of MPCM222"
+        },
+        "MPCM222:gmoverid":{
+          "unit":"1/V",
+          "reference":"DUT.MPCM222.m1:gmoverid",
+          "comment" : "gmoverid of MPCM222"
+        },
+        "MPCM222:vdsat":{
+          "unit":"V",
+          "reference":"DUT.MPCM222.m1:vdsat",
+          "comment" : "saturation voltage of MPCM222"
+        },
+        "MPCM222:vgs":{
+          "unit":"V",
+          "reference":"DUT.MPCM222.m1:vgs",
+          "comment" : "gate-source voltage of MPCM222"
+        },
+        "MPCM222:vds":{
+          "unit":"V",
+          "reference":"DUT.MPCM222.m1:vds",
+          "comment" : "drain-source voltage of MPCM222"
+        },
+        "MPCM222:vbs":{
+          "unit":"V",
+          "reference":"DUT.MPCM222.m1:vbs",
+          "comment" : "bulk-source voltage of MPCM222"
+        },
+        "MPCM222:vth":{
+          "unit":"V",
+          "reference":"DUT.MPCM222.m1:vth",
+          "comment" : "threshold voltage of MPCM222"
+        },
+        "MNCM31:gm":{
+          "unit":"S",
+          "reference":"DUT.MNCM31.m1:gm",
+          "comment" : "transconductance of MNCM31"
+        },
+        "MNCM31:gds":{
+          "unit":"S",
+          "reference":"DUT.MNCM31.m1:gds",
+          "comment" : "output conductance of MNCM31"
+        },
+        "MNCM31:id":{
+          "unit":"A",
+          "reference":"DUT.MNCM31.m1:id",
+          "comment" : "drain current of MNCM31"
+        },
+        "MNCM31:gmoverid":{
+          "unit":"1/V",
+          "reference":"DUT.MNCM31.m1:gmoverid",
+          "comment" : "gmoverid of MNCM31"
+        },
+        "MNCM31:vdsat":{
+          "unit":"V",
+          "reference":"DUT.MNCM31.m1:vdsat",
+          "comment" : "saturation voltage of MNCM31"
+        },
+        "MNCM31:vgs":{
+          "unit":"V",
+          "reference":"DUT.MNCM31.m1:vgs",
+          "comment" : "gate-source voltage of MNCM31"
+        },
+        "MNCM31:vds":{
+          "unit":"V",
+          "reference":"DUT.MNCM31.m1:vds",
+          "comment" : "drain-source voltage of MNCM31"
+        },
+        "MNCM31:vbs":{
+          "unit":"V",
+          "reference":"DUT.MNCM31.m1:vbs",
+          "comment" : "bulk-source voltage of MNCM31"
+        },
+        "MNCM31:vth":{
+          "unit":"V",
+          "reference":"DUT.MNCM31.m1:vth",
+          "comment" : "threshold voltage of MNCM31"
+        },
+        "MNCM32:gm":{
+          "unit":"S",
+          "reference":"DUT.MNCM32.m1:gm",
+          "comment" : "transconductance of MNCM32"
+        },
+        "MNCM32:gds":{
+          "unit":"S",
+          "reference":"DUT.MNCM32.m1:gds",
+          "comment" : "output conductance of MNCM32"
+        },
+        "MNCM32:id":{
+          "unit":"A",
+          "reference":"DUT.MNCM32.m1:id",
+          "comment" : "drain current of MNCM32"
+        },
+        "MNCM32:gmoverid":{
+          "unit":"1/V",
+          "reference":"DUT.MNCM32.m1:gmoverid",
+          "comment" : "gmoverid of MNCM32"
+        },
+        "MNCM32:vdsat":{
+          "unit":"V",
+          "reference":"DUT.MNCM32.m1:vdsat",
+          "comment" : "saturation voltage of MNCM32"
+        },
+        "MNCM32:vgs":{
+          "unit":"V",
+          "reference":"DUT.MNCM32.m1:vgs",
+          "comment" : "gate-source voltage of MNCM32"
+        },
+        "MNCM32:vds":{
+          "unit":"V",
+          "reference":"DUT.MNCM32.m1:vds",
+          "comment" : "drain-source voltage of MNCM32"
+        },
+        "MNCM32:vbs":{
+          "unit":"V",
+          "reference":"DUT.MNCM32.m1:vbs",
+          "comment" : "bulk-source voltage of MNCM32"
+        },
+        "MNCM32:vth":{
+          "unit":"V",
+          "reference":"DUT.MNCM32.m1:vth",
+          "comment" : "threshold voltage of MNCM32"
         },
         "X":{
           "unit":"V",
@@ -508,10 +589,10 @@
           "reference":"DUT.Y",
           "comment" : "Voltage at node Y"
         },
-        "O":{
+        "Z":{
           "unit":"V",
-          "reference":"DUT.O",
-          "comment" : "Voltage at node O"
+          "reference":"DUT.Z",
+          "comment" : "Voltage at node Z"
         },
         "B":{
           "unit":"V",
@@ -578,22 +659,6 @@
           "unit":"1",
           "reference":"DUT.MNCM12.Au0_nmos(m).Sensitivity"
         },
-        "MNCM13/avt/contribution":{
-          "unit":"V",
-          "reference":"DUT.MNCM13.Avt_nmos(m).Contribution"
-        },
-        "MNCM13/avt/sensitivity":{
-          "unit":"1",
-          "reference":"DUT.MNCM13.Avt_nmos(m).Sensitivity"
-        },
-        "MNCM13/au0/contribution":{
-          "unit":"V",
-          "reference":"DUT.MNCM13.Au0_nmos(m).Contribution"
-        },
-        "MNCM13/au0/sensitivity":{
-          "unit":"1",
-          "reference":"DUT.MNCM13.Au0_nmos(m).Sensitivity"
-        },
         "MND11/avt/contribution":{
           "unit":"V",
           "reference":"DUT.MND11.Avt_nmos(m).Contribution"
@@ -626,53 +691,101 @@
           "unit":"1",
           "reference":"DUT.MND12.Au0_nmos(m).Sensitivity"
         },
-        "MNCS/avt/contribution":{
+        "MNCM31/avt/contribution":{
           "unit":"V",
-          "reference":"DUT.MNCS.Avt_nmos(m).Contribution"
+          "reference":"DUT.MNCM31.Avt_nmos(m).Contribution"
         },
-        "MNCS/avt/sensitivity":{
+        "MNCM31/avt/sensitivity":{
           "unit":"1",
-          "reference":"DUT.MNCS.Avt_nmos(m).Sensitivity"
+          "reference":"DUT.MNCM31.Avt_nmos(m).Sensitivity"
         },
-        "MNCS/au0/contribution":{
+        "MNCM31/au0/contribution":{
           "unit":"V",
-          "reference":"DUT.MNCS.Au0_nmos(m).Contribution"
+          "reference":"DUT.MNCM31.Au0_nmos(m).Contribution"
         },
-        "MNCS/au0/sensitivity":{
+        "MNCM31/au0/sensitivity":{
           "unit":"1",
-          "reference":"DUT.MNCS.Au0_nmos(m).Sensitivity"
+          "reference":"DUT.MNCM31.Au0_nmos(m).Sensitivity"
         },        
-        "MPCM21/avt/contribution":{
+        "MNCM32/avt/contribution":{
           "unit":"V",
-          "reference":"DUT.MPCM21.Avt_pmos(m).Contribution"
+          "reference":"DUT.MNCM32.Avt_nmos(m).Contribution"
         },
-        "MPCM21/avt/sensitivity":{
+        "MNCM32/avt/sensitivity":{
           "unit":"1",
-          "reference":"DUT.MPCM21.Avt_pmos(m).Sensitivity"
+          "reference":"DUT.MNCM32.Avt_nmos(m).Sensitivity"
         },
-        "MPCM21/au0/contribution":{
+        "MNCM32/au0/contribution":{
           "unit":"V",
-          "reference":"DUT.MPCM21.Au0_pmos(m).Contribution"
+          "reference":"DUT.MNCM32.Au0_nmos(m).Contribution"
         },
-        "MPCM21/au0/sensitivity":{
+        "MNCM32/au0/sensitivity":{
           "unit":"1",
-          "reference":"DUT.MPCM21.Au0_pmos(m).Sensitivity"
+          "reference":"DUT.MNCM32.Au0_nmos(m).Sensitivity"
+        },
+        "MPCM211/avt/contribution":{
+          "unit":"V",
+          "reference":"DUT.MPCM211.Avt_pmos(m).Contribution"
+        },
+        "MPCM211/avt/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MPCM211.Avt_pmos(m).Sensitivity"
+        },
+        "MPCM211/au0/contribution":{
+          "unit":"V",
+          "reference":"DUT.MPCM211.Au0_pmos(m).Contribution"
+        },
+        "MPCM211/au0/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MPCM211.Au0_pmos(m).Sensitivity"
         },     
-        "MPCM22/avt/contribution":{
+        "MPCM212/avt/contribution":{
           "unit":"V",
-          "reference":"DUT.MPCM22.Avt_pmos(m).Contribution"
+          "reference":"DUT.MPCM212.Avt_pmos(m).Contribution"
         },
-        "MPCM22/avt/sensitivity":{
+        "MPCM212/avt/sensitivity":{
           "unit":"1",
-          "reference":"DUT.MPCM22.Avt_pmos(m).Sensitivity"
+          "reference":"DUT.MPCM212.Avt_pmos(m).Sensitivity"
         },
-        "MPCM22/au0/contribution":{
+        "MPCM212/au0/contribution":{
           "unit":"V",
-          "reference":"DUT.MPCM22.Au0_pmos(m).Contribution"
+          "reference":"DUT.MPCM212.Au0_pmos(m).Contribution"
         },
-        "MPCM22/au0/sensitivity":{
+        "MPCM212/au0/sensitivity":{
           "unit":"1",
-          "reference":"DUT.MPCM22.Au0_pmos(m).Sensitivity"
+          "reference":"DUT.MPCM212.Au0_pmos(m).Sensitivity"
+        },  
+        "MPCM221/avt/contribution":{
+          "unit":"V",
+          "reference":"DUT.MPCM221.Avt_pmos(m).Contribution"
+        },
+        "MPCM221/avt/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MPCM221.Avt_pmos(m).Sensitivity"
+        },
+        "MPCM221/au0/contribution":{
+          "unit":"V",
+          "reference":"DUT.MPCM221.Au0_pmos(m).Contribution"
+        },
+        "MPCM221/au0/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MPCM221.Au0_pmos(m).Sensitivity"
+        },  
+        "MPCM222/avt/contribution":{
+          "unit":"V",
+          "reference":"DUT.MPCM222.Avt_pmos(m).Contribution"
+        },
+        "MPCM222/avt/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MPCM222.Avt_pmos(m).Sensitivity"
+        },
+        "MPCM222/au0/contribution":{
+          "unit":"V",
+          "reference":"DUT.MPCM222.Au0_pmos(m).Contribution"
+        },
+        "MPCM222/au0/sensitivity":{
+          "unit":"1",
+          "reference":"DUT.MPCM222.Au0_pmos(m).Sensitivity"
         }
       },
 
