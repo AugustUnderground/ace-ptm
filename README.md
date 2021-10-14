@@ -30,9 +30,29 @@ $ spectre -I./XXX/pdk ./chr/nmos.scs
 $ spectre -I./XXX/pdk ./chr/pmos.scs
 ```
 
+Alternatively, the script in `./src/char.pl` can be used.
+
+```bash
+perl ./src/char.pl [--tech NODE] [--nmos] [--pmos]
+```
+
+If no `NODE` is specified, all node swill be used. If neither device type is
+specified, both will be used.
+
+**Example:**
+
+```bash
+# Characterize everything.
+$ perl ./src/char.pl 
+
+# Characterize 90nm, 32nm and 130nm NMOS devices.
+$ perl ./src/char.pl --tech 90 --tech 32 --tech 130 --nmos
+```
+
 ## Testing
 
-Running the `test.pl` script should return no errors.
+Running the test script in `./src/test.pl` should run through all technologies
+once and produce no errors.
 
 ## Circuits
 
