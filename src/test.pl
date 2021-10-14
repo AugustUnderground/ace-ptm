@@ -15,6 +15,6 @@ foreach (@pdks) {
     if ($? == 0) {
         print "[\e[1;32m ✔ \e[0m] No errors for $_ nm PTM devices.\n";
     } else {
-        printf "[\e[1;31m ✘ \e[0m] $_ nm PTM devices returned with $?.\n"
+        print "[\e[1;31m ✘ \e[0m] $_ nm PTM devices returned with $?.\n"
     }
 }
