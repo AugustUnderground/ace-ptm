@@ -1,4 +1,4 @@
-// characterization single-ended opamp 'op4' in XH35-3V3
+// characterization single-ended opamp 'op4' in PTM 90nm
 
 simulator lang=spectre
 global 0
