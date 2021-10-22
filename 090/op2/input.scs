@@ -1,4 +1,4 @@
-// characterization single-ended opamp 'op2' in PTM
+// characterization single-ended opamp 'op2' in PTM 90nm
 
 simulator lang=spectre
 global 0
@@ -10,7 +10,9 @@ parameters vs=500m vi=0 vsup=5.0 vcm=0 vo=0 vid=0 vicm=0 \
            Lcm1=500n Lcm2=500n Lcm3=500n Ld=500n         \
            Wcm1=2.0u Wcm2=2.0u Wcm3=2.0u Wd=2.0u         \
            Mcm11=1   Mcm21=1   Mcm31=2   Md=2            \
-           Mcm12=2   Mcm22=4   Mcm32=2 
+           Mcm12=2   Mcm22=4   Mcm32=2                   \
+           A=(Mcm11+Mcm12)*Wcm1*Lcm1 + 2*Md*Wd*Ld + 2*   \
+             (Mcm21+Mcm22)*Wcm2*Lcm2 + (Mcm31+Mcm32)*Wcm3*Lcm3
 
 subckt ideal_balun d c p n
     K0 (d 0 p c) transformer n1=2

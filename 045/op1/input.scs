@@ -1,4 +1,4 @@
-// characterization single-ended opamp 'op1' in PTM
+// characterization single-ended opamp 'op1' in PTM 45nm
 
 simulator lang=spectre
 global 0
@@ -11,7 +11,11 @@ parameters vs=500m vi=0 vsup=5.0 vcm=0 vo=0 vid=0 vicm=0 \
            Wcm1=2.0u Wcm2=2.0u Wcs=2.0u  Wd=2.0u         \
            Mcm11=1   Mcm21=2   Mcs=22    Md=2            \
            Mcm12=5   Mcm22=2                             \
-           Mcm13=22
+           Mcm13=22                                      \
+           A=(Mcm13+Mcm12+Mcm13)*Wcm1*Lcm1 +             \
+             2*Md*Wd*Ld + (Mcm21 + Mcm22)*Wcm2*Lcm2 +    \
+             Mcs*Wcs*Lcs + Wres*Lres + Wcap*Wcap*Mcap
+
 // For MOS passives: Lres=100u Wres=2.0u Wcap=20u Mcap=1
 
 subckt ideal_balun d c p n
