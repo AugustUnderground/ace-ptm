@@ -7,8 +7,8 @@ include "ptm.scs"
 
 parameters vs=100m vi=0 vsup=1.2 vcm=0 vo=0 vid=0 vicm=0 \
            a0=1 cl=5p fin=1k i0=3u rl=100M               \
-           Lcm1=1.95u Lcm2=3.35u  Lcm3=2.6u Ld=5.15u     \
-           Wcm1=2.55u Wcm2=10.65u Wcm3=6.5u Wd=3u        \
+           Lcm1=500n Lcm2=500n Lcm3=500n Ld=500n         \
+           Wcm1=2.0u Wcm2=2.0u Wcm3=2.0u Wd=2.0u         \
            Mcm11=1    Mcm2x1=1    Mcm31=1   Md=2         \
            Mcm12=2    Mcm212=4    Mcm32=2                \
                       Mcm222=2                           \
@@ -56,47 +56,34 @@ VID  (IND  CM) vsource type=dc dc=vid mag=1
 VICM (INCM CM) vsource type=dc dc=vicm
 
 subckt op B INP INN O VDD VSS
-  MNCM31 (Z Z VSS VSS) nmos m=(Mcm31)*(1) w=Wcm3 l=Lcm3 ad=0.7u*(Wcm3) \
-          as=0.7u*(Wcm3) pd=0.7u*2+(Wcm3) ps=0.7u*2+(Wcm3) nrd=0.3u/(Wcm3) \
-          nrs=0.3u/(Wcm3) par1=((Mcm31)*(1))
-  MNCM32 (O Z VSS VSS) nmos m=(Mcm32)*(1) w=Wcm3 l=Lcm3 ad=0.7u*(Wcm3) \
-          as=0.7u*(Wcm3) pd=0.7u*2+(Wcm3) ps=0.7u*2+(Wcm3) nrd=0.3u/(Wcm3) \
-          nrs=0.3u/(Wcm3) par1=((Mcm32)*(1))
-  MND12 (X INP CM VSS) nmos m=(Md)*(1) w=Wd l=Wd ad=0.7u*(Wd) as=0.7u*(Wd) \
-          pd=0.7u*2+(Wd) ps=0.7u*2+(Wd) nrd=0.3u/(Wd) nrs=0.3u/(Wd) \
-          par1=((Md)*(1))
-  MND11 (Y INN CM VSS) nmos m=(Md)*(1) w=Wd l=Wd ad=0.7u*(Wd) as=0.7u*(Wd) \
-          pd=0.7u*2+(Wd) ps=0.7u*2+(Wd) nrd=0.3u/(Wd) nrs=0.3u/(Wd) \
-          par1=((Md)*(1))
-  MNCM11 (B B VSS VSS) nmos m=(Mcm11)*(1) w=Wcm1 l=Lcm1 ad=0.7u*(Wcm1) \
-          as=0.7u*(Wcm1) pd=0.7u*2+(Wcm1) ps=0.7u*2+(Wcm1) nrd=0.3u/(Wcm1) \
-          nrs=0.3u/(Wcm1) par1=((Mcm11)*(1))
-  MNCM12 (CM B VSS VSS) nmos m=(Mcm12)*(1) w=Wcm1 l=Lcm1 ad=0.7u*(Wcm1) \
-          as=0.7u*(Wcm1) pd=0.7u*2+(Wcm1) ps=0.7u*2+(Wcm1) nrd=0.3u/(Wcm1) \
-          nrs=0.3u/(Wcm1) par1=((Mcm12)*(1))
-  MPCM222 (Z Y VDD VDD) pmos m=(Mcm222)*(1) w=Wcm2 l=Lcm2 ad=0.7u*(Wcm2) \
-          as=0.7u*(Wcm2) pd=0.7u*2+(Wcm2) ps=0.7u*2+(Wcm2) nrd=0.3u/(Wcm2) \
-          nrs=0.3u/(Wcm2) par1=((Mcm222)*(1))
-  MPCM221 (Y Y VDD VDD) pmos m=(Mcm2x1)*(1) w=Wcm2 l=Lcm2 ad=0.7u*(Wcm2) \
-          as=0.7u*(Wcm2) pd=0.7u*2+(Wcm2) ps=0.7u*2+(Wcm2) nrd=0.3u/(Wcm2) \
-          nrs=0.3u/(Wcm2) par1=((Mcm2x1)*(1))
-  MPCM212 (O X VDD VDD) pmos m=(Mcm212)*(1) w=Wcm2 l=Lcm2 ad=0.7u*(Wcm2) \
-          as=0.7u*(Wcm2) pd=0.7u*2+(Wcm2) ps=0.7u*2+(Wcm2) nrd=0.3u/(Wcm2) \
-          nrs=0.3u/(Wcm2) par1=((Mcm212)*(1))
-  MPCM211 (X X VDD VDD) pmos m=(Mcm2x1)*(1) w=Wcm2 l=Lcm2 ad=0.7u*(Wcm2) \
-          as=0.7u*(Wcm2) pd=0.7u*2+(Wcm2) ps=0.7u*2+(Wcm2) nrd=0.3u/(Wcm2) \
-          nrs=0.3u/(Wcm2) par1=((Mcm2x1)*(1))
+    // Output NMOS Current Mirror
+    MNCM31 (Z Z VSS VSS) nfet m=Mcm31 w=Wcm3 l=Lcm3
+    MNCM32 (O Z VSS VSS) nfet m=Mcm32 w=Wcm3 l=Lcm3
+
+    // Differential Pair
+    MND12 (X INP CM VSS) nfet m=Md w=Wd l=Ld
+    MND11 (Y INN CM VSS) nfet m=Md w=Wd l=Ld
+
+    // Biasing Current Mirror
+    MNCM11 (B  B VSS VSS) nfet m=Mcm11 w=Wcm1 l=Lcm1
+    MNCM12 (CM B VSS VSS) nfet m=Mcm12 w=Wcm1 l=Lcm1
+
+    // Output PMOS Current Mirrors
+    MPCM222 (Z Y VDD VDD) pfet m=Mcm222 w=Wcm2 l=Lcm2
+    MPCM221 (Y Y VDD VDD) pfet m=Mcm2x1 w=Wcm2 l=Lcm2
+    MPCM212 (O X VDD VDD) pfet m=Mcm212 w=Wcm2 l=Lcm2
+    MPCM211 (X X VDD VDD) pfet m=Mcm2x1 w=Wcm2 l=Lcm2
 ends op
 
-simulatorOptions options reltol=100e-6 vabstol=1e-6 \
-    iabstol=1e-12 temp=27 tnom=27 homotopy=all gmin=1e-12 rforce=1 \
+simulatorOptions options reltol=100e-6 vabstol=1e-6                 \
+    iabstol=1e-12 temp=27 tnom=27 homotopy=all gmin=1e-12 rforce=1  \
     save=selected dc_pivot_check=yes
 
-save DUT.M*.m1:gm DUT.M*.m1:gds DUT.M*.m1:id DUT.M*.m1:gmoverid \
-  DUT.M*.m1:fug DUT.M*.m1:vdsat DUT.M*.m1:vgs DUT.M*.m1:vds \
-  DUT.M*.m1:vbs  DUT.M*.m1:gmb DUT.M*.m1:vth DUT.M*.m1:self_gain \
-  DUT.X DUT.Y DUT.Z DUT.B DUT.CM DUT:VDD DUT:VSS VDD VSS OUT \
-  DUT:O OUT OUT_IDEAL INN INP
+save DUT.M*.m1:gm DUT.M*.m1:gds DUT.M*.m1:id DUT.M*.m1:gmoverid     \
+     DUT.M*.m1:fug DUT.M*.m1:vdsat DUT.M*.m1:vgs DUT.M*.m1:vds      \
+     DUT.M*.m1:vbs  DUT.M*.m1:gmb DUT.M*.m1:vth DUT.M*.m1:self_gain \
+     DUT.X DUT.Y DUT.Z DUT.B DUT.CM DUT:VDD DUT:VSS DUT:O           \
+     OUT_IDEAL INN INP VDD VSS OUT                                  \
 
 fb1 alter dev=INPSW param=position value=1
 fb2 alter dev=INNSW param=position value=1
@@ -108,7 +95,7 @@ fb6 alter param=a0 value=1
 dcop dc save=selected title="dcop"
 
 dcmatch (OUT CM) dcmatch mth=0.9 method=statistics nsigma=1 \
-  variations=mismatch where=rawfile prevoppoint=yes title="dcmatch"
+    variations=mismatch where=rawfile prevoppoint=yes title="dcmatch"
 
 stb stb start=1 stop=100G probe=IPRB0 localgnd=0 dec=50 title="stb"
 tran tran stop=100u errpreset=conservative title="tran"
