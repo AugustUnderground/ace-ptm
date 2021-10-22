@@ -24,42 +24,42 @@
     },
     "Lcm1":{
       "min":65e-9,
-      "init":750e-9,
+      "init":300e-9,
       "max":100e-6,
       "grid":1e-9,
       "sizing":true
     },
     "Lcm2":{
       "min":65e-9,
-      "init":750e-9,
+      "init":300e-9,
       "max":100e-6,
       "grid":1e-9,
       "sizing":true
     },
     "Lcm3":{
       "min":65e-9,
-      "init":750e-9,
+      "init":300e-9,
       "max":100e-6,
       "grid":1e-9,
       "sizing":true
     },
     "Ld":{
       "min":65e-9,
-      "init":750e-9,
+      "init":300e-9,
       "max":100e-6,
       "grid":1e-9,
       "sizing":true
     },
     "Lc1":{
       "min":65e-9,
-      "init":750e-9,
+      "init":300e-9,
       "max":100e-6,
       "grid":1e-9,
       "sizing":true
     },
     "Lr":{
       "min":65e-9,
-      "init":750e-9,
+      "init":300e-9,
       "max":100e-6,
       "grid":1e-9,
       "sizing":true
