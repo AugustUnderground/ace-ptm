@@ -67,7 +67,7 @@
     "Wcm1":{
       "min":0.1e-6,
       "init":1e-6,
-      "grid":50e-9,
+      "grid":1e-9,
       "max":150e-6,
       "sizing":true
     },
