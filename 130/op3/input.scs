@@ -1,20 +1,24 @@
-// characterization single-ended opamp 'op2' in PTM 130nm
+// characterization single-ended opamp 'op3' in PTM 130nm
 
 simulator lang=spectre
 global 0
 
 include "ptm.scs"
 
-parameters vs=500m cl=5p rl=100M i0=3u vi=0 vsup=3.3 vcm=0 a0=1                \
-  fin=1k vo=0 vid=0 vicm=0                                                     \
-  Lcm1=1.95u Lcm2=3.35u Lcm3=2.6u Ld=5.15u Mcm11=1 Mcm12=2 Mcm2x1=1 Mcm212=4   \
-   Mcm222=2 Mcm31=1 Mcm32=2 Md=2 Wcm1=2.55u Wcm2=10.65u Wcm3=6.5u Wd=3u        \
-  A=(Mcm11+Mcm12)*Wcm1*Lcm1 + 2*Md*Wd*Ld + (2*Mcm2x1+Mcm212+Mcm222)*Wcm2*Lcm2 +\
-    (Mcm31+Mcm32)*Wcm3*Lcm3
+parameters vs=100m vi=0 vsup=1.2 vcm=0 vo=0 vid=0 vicm=0 \
+           a0=1 cl=5p fin=1k i0=3u rl=100M               \
+           Lcm1=1.95u Lcm2=3.35u  Lcm3=2.6u Ld=5.15u     \
+           Wcm1=2.55u Wcm2=10.65u Wcm3=6.5u Wd=3u        \
+           Mcm11=1    Mcm2x1=1    Mcm31=1   Md=2         \
+           Mcm12=2    Mcm212=4    Mcm32=2                \
+                      Mcm222=2                           \
+           A=(Mcm11+Mcm12)*Wcm1*Lcm1 + 2*Md*Wd*Ld +      \
+             (2*Mcm2x1+Mcm212+Mcm222)*Wcm2*Lcm2 +        \ 
+             (Mcm31+Mcm32)*Wcm3*Lcm3
 
 subckt ideal_balun d c p n
-  K0 (d 0 p c) transformer n1=2
-  K1 (d 0 c n) transformer n1=2
+    K0 (d 0 p c) transformer n1=2
+    K1 (d 0 c n) transformer n1=2
 ends ideal_balun
 
 // Biasing
